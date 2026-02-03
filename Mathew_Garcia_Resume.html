@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathew Garcia - AI/ML Infrastructure Leader</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Animation & Transition */
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* Border Radius */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 20px;
+      --radius-2xl: 24px;
+      --radius-full: 9999px;
+
+      /* Spacing - Using 8px base system */
+      --space-1: 0.25rem;   /* 4px */
+      --space-2: 0.5rem;    /* 8px */
+      --space-3: 0.75rem;   /* 12px */
+      --space-4: 1rem;      /* 16px */
+      --space-5: 1.5rem;    /* 24px */
+      --space-6: 2rem;      /* 32px */
+      --space-7: 2.5rem;    /* 40px */
+      --space-8: 3rem;      /* 48px */
+      --space-10: 4rem;     /* 64px */
+
+      /* Typography - Refined modular scale */
+      --font-xs: 0.8125rem;  /* 13px */
+      --font-sm: 0.9375rem;  /* 15px */
+      --font-base: 1rem;     /* 16px */
+      --font-lg: 1.125rem;   /* 18px */
+      --font-xl: 1.3125rem;  /* 21px */
+      --font-2xl: 1.625rem;  /* 26px */
+      --font-3xl: 2rem;      /* 32px */
+      --font-4xl: 2.5rem;    /* 40px */
+
+      /* Font Weights */
+      --weight-light: 300;
+      --weight-normal: 400;
+      --weight-medium: 500;
+      --weight-semibold: 600;
+      --weight-bold: 700;
+
+      /* Dark Theme Colors - Enhanced MagisAI Palette */
+      --bg-base: #0f1419;
+      --bg-elevated: #1a1f2e;
+      --bg-surface: #242d42;
+      --bg-glass: rgba(255, 255, 255, 0.04);
+      --bg-glass-hover: rgba(255, 255, 255, 0.07);
+
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --border-default: rgba(255, 255, 255, 0.1);
+      --border-strong: rgba(255, 255, 255, 0.16);
+
+      --text-primary: rgba(255, 255, 255, 0.96);
+      --text-secondary: rgba(255, 255, 255, 0.78);
+      --text-tertiary: rgba(255, 255, 255, 0.58);
+      --text-muted: rgba(255, 255, 255, 0.42);
+
+      --accent-primary: #5B9FED;
+      --accent-hover: #7BB2F5;
+      --accent-active: #3D7FCF;
+      --accent-secondary: #2A4A7D;
+      --accent-gradient: linear-gradient(135deg, rgba(91, 159, 237, 0.25), rgba(61, 127, 207, 0.15));
+      --accent-gradient-strong: linear-gradient(135deg, #5B9FED 0%, #4A8FDF 50%, #3D7FCF 100%);
+
+      --color-success: #10b981;
+      --color-warning: #f59e0b;
+      --color-error: #ef4444;
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.16);
+      --shadow-lg: 0 8px 32px rgba(10, 20, 50, 0.28);
+      --shadow-xl: 0 16px 48px rgba(10, 20, 50, 0.32);
+      --shadow-glow: 0 0 32px rgba(91, 159, 237, 0.25);
+      --shadow-glow-strong: 0 0 48px rgba(91, 159, 237, 0.4);
+
+      --glass-blur: blur(12px);
+      --glass-saturate: saturate(180%);
+
+      /* Starfield colors */
+      --star-color: 220, 235, 255;
+      --star-line-color: 91, 159, 237;
+    }
+
+    /* Light Theme */
+    [data-theme="light"] {
+      --bg-base: #f8fafb;
+      --bg-elevated: #ffffff;
+      --bg-surface: #e8eef5;
+      --bg-glass: rgba(255, 255, 255, 0.75);
+      --bg-glass-hover: rgba(255, 255, 255, 0.9);
+
+      --border-subtle: rgba(0, 0, 0, 0.06);
+      --border-default: rgba(0, 0, 0, 0.1);
+      --border-strong: rgba(0, 0, 0, 0.16);
+
+      --text-primary: rgba(15, 23, 42, 0.96);
+      --text-secondary: rgba(15, 23, 42, 0.78);
+      --text-tertiary: rgba(15, 23, 42, 0.58);
+      --text-muted: rgba(15, 23, 42, 0.42);
+
+      --accent-primary: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-active: #1e40af;
+      --accent-secondary: #3b82f6;
+      --accent-gradient: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(29, 78, 216, 0.1));
+      --accent-gradient-strong: linear-gradient(135deg, #2563eb 0%, #1e56d8 50%, #1d4ed8 100%);
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12);
+      --shadow-glow: 0 0 32px rgba(37, 99, 235, 0.15);
+      --shadow-glow-strong: 0 0 48px rgba(37, 99, 235, 0.25);
+
+      --star-color: 37, 99, 235;
+      --star-line-color: 37, 99, 235;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(160deg, var(--bg-base) 0%, var(--bg-elevated) 40%, var(--bg-surface) 100%);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.65;
+      padding: clamp(1.5rem, 5vw, 3.5rem) clamp(1rem, 4vw, 1.5rem);
+      position: relative;
+      overflow-x: hidden;
+      transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 100;
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-default);
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-base);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent-primary);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28),
+                  0 0 32px rgba(91, 159, 237, 0.25),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+      transform: scale(1.08) rotate(15deg);
+    }
+
+    .theme-toggle:active {
+      transform: scale(1.02) rotate(15deg);
+    }
+
+    .theme-toggle svg {
+      width: 24px;
+      height: 24px;
+      color: var(--text-secondary);
+      transition: all var(--transition-base);
+      filter: drop-shadow(0 0 4px rgba(91, 159, 237, 0));
+    }
+
+    .theme-toggle:hover svg {
+      color: var(--accent-primary);
+      filter: drop-shadow(0 0 8px rgba(91, 159, 237, 0.5));
+    }
+
+    .theme-toggle .icon-sun,
+    .theme-toggle .icon-moon {
+      position: absolute;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Download/Print Button */
+    .download-button {
+      position: fixed;
+      top: 5.5rem;
+      right: 1.5rem;
+      z-index: 100;
+      padding: var(--space-3) var(--space-5);
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-default);
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: all var(--transition-base);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+      font-family: 'Inter', sans-serif;
+      font-size: var(--font-sm);
+      font-weight: var(--weight-medium);
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .download-button:hover {
+      border-color: var(--accent-primary);
+      background: var(--bg-glass-hover);
+      color: var(--accent-primary);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28),
+                  0 0 32px rgba(91, 159, 237, 0.25),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .download-button:active {
+      transform: translateY(0);
+    }
+
+    .download-button svg {
+      width: 20px;
+      height: 20px;
+      transition: all var(--transition-base);
+      filter: drop-shadow(0 0 4px rgba(91, 159, 237, 0));
+    }
+
+    .download-button:hover svg {
+      filter: drop-shadow(0 0 8px rgba(91, 159, 237, 0.5));
+    }
+
+    .download-button:focus-visible {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 4px;
+      box-shadow: 0 0 0 4px rgba(91, 159, 237, 0.2),
+                  0 8px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    /* Responsive adjustments for download button */
+    @media (max-width: 768px) {
+      .download-button {
+        top: auto;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        padding: var(--space-3);
+      }
+
+      .download-button .button-text {
+        display: none;
+      }
+    }
+
+    [data-theme="dark"] .theme-toggle .icon-sun {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+
+    [data-theme="dark"] .theme-toggle .icon-moon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    [data-theme="light"] .theme-toggle .icon-sun {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    [data-theme="light"] .theme-toggle .icon-moon {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+
+    /* Starfield canvas */
+    #starfield {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Enhanced ambient gradient overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse 140% 90% at 15% 15%, rgba(91, 159, 237, 0.12) 0%, transparent 55%),
+                  radial-gradient(ellipse 130% 80% at 85% 85%, rgba(61, 127, 207, 0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse 110% 70% at 50% 50%, rgba(42, 74, 125, 0.05) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 1;
+      animation: ambientPulse 18s ease-in-out infinite;
+    }
+
+    @keyframes ambientPulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.88;
+        transform: scale(1.02);
+      }
+    }
+
+    /* Light theme ambient overlay */
+    [data-theme="light"] body::before {
+      background: radial-gradient(ellipse 140% 90% at 15% 15%, rgba(37, 99, 235, 0.08) 0%, transparent 55%),
+                  radial-gradient(ellipse 130% 80% at 85% 85%, rgba(29, 78, 216, 0.06) 0%, transparent 50%),
+                  radial-gradient(ellipse 110% 70% at 50% 50%, rgba(147, 197, 253, 0.05) 0%, transparent 65%);
+    }
+
+    /* Light theme glass card adjustments */
+    [data-theme="light"] .glass-card {
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.85) 0%,
+        rgba(255, 255, 255, 0.65) 100%
+      );
+      border-color: rgba(0, 0, 0, 0.09);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06),
+                  0 1px 4px rgba(0, 0, 0, 0.04),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+    }
+
+    [data-theme="light"] .glass-card:hover {
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08),
+                  0 0 48px rgba(37, 99, 235, 0.12),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 1);
+    }
+
+    [data-theme="light"] .skill-card-front {
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.75) 100%
+      );
+      border-color: rgba(0, 0, 0, 0.09);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 1);
+    }
+
+    [data-theme="light"] .skill-card-front::before {
+      box-shadow: 0 0 14px rgba(37, 99, 235, 0.5),
+                  0 0 6px rgba(37, 99, 235, 0.7);
+    }
+
+    [data-theme="light"] .skill-card-back {
+      background: linear-gradient(
+        145deg,
+        rgba(37, 99, 235, 0.14) 0%,
+        rgba(29, 78, 216, 0.09) 100%
+      );
+      border-color: rgba(37, 99, 235, 0.3);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08),
+                  0 0 32px rgba(37, 99, 235, 0.15),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+    }
+
+    [data-theme="light"] .contact-item {
+      background: rgba(255, 255, 255, 0.65);
+      border-color: rgba(0, 0, 0, 0.09);
+    }
+
+    [data-theme="light"] .contact-item:hover {
+      background: rgba(37, 99, 235, 0.08);
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+    }
+
+    [data-theme="light"] .date-range {
+      background: rgba(255, 255, 255, 0.65);
+      border-color: rgba(0, 0, 0, 0.09);
+    }
+
+    [data-theme="light"] .experience-item:hover .date-range {
+      background: rgba(37, 99, 235, 0.08);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+
+    [data-theme="light"] .military-item {
+      background: rgba(255, 255, 255, 0.65);
+      border-color: rgba(0, 0, 0, 0.09);
+    }
+
+    [data-theme="light"] .name {
+      text-shadow: 0 0 64px rgba(37, 99, 235, 0.35),
+                   0 4px 12px rgba(0, 0, 0, 0.08),
+                   0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="light"] .tagline {
+      text-shadow: 0 0 24px rgba(37, 99, 235, 0.25);
+    }
+
+    [data-theme="light"] .header-card::after {
+      box-shadow: 0 0 28px rgba(37, 99, 235, 0.5),
+                  0 0 12px rgba(37, 99, 235, 0.65);
+    }
+
+    @keyframes headerGlowLight {
+      0%, 100% {
+        box-shadow: 0 0 28px rgba(37, 99, 235, 0.5), 0 0 12px rgba(37, 99, 235, 0.65);
+      }
+      50% {
+        box-shadow: 0 0 36px rgba(37, 99, 235, 0.6), 0 0 16px rgba(37, 99, 235, 0.75);
+      }
+    }
+
+    [data-theme="light"] .header-card::after {
+      animation: headerGlowLight 4s ease-in-out infinite;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Focus styles for accessibility */
+    *:focus-visible {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 3px;
+      border-radius: 4px;
+      box-shadow: 0 0 0 4px rgba(91, 159, 237, 0.15);
+    }
+
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 4px;
+      box-shadow: 0 0 0 4px rgba(91, 159, 237, 0.2),
+                  0 8px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    /* Glass Card - Refined Glassmorphism */
+    .glass-card {
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.065) 0%,
+        rgba(255, 255, 255, 0.025) 100%
+      );
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: var(--radius-2xl);
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: var(--space-6);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24),
+                  0 1px 4px rgba(0, 0, 0, 0.12),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+      transition: all var(--transition-slow);
+      position: relative;
+    }
+
+    /* Subtle top highlight for depth */
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%
+      );
+      border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(91, 159, 237, 0.3);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.32),
+                  0 0 48px rgba(91, 159, 237, 0.16),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+      transform: translateY(-4px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .glass-card {
+        transition: none;
+      }
+      .glass-card:hover {
+        transform: none;
+      }
+    }
+
+    /* Header Card */
+    .header-card {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: var(--space-7);
+      padding-bottom: var(--space-7);
+    }
+
+    /* Accent top border with glow */
+    .header-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 3px;
+      background: var(--accent-gradient-strong);
+      border-radius: 0 0 var(--radius-full) var(--radius-full);
+      box-shadow: 0 0 28px rgba(91, 159, 237, 0.65),
+                  0 0 12px rgba(91, 159, 237, 0.8);
+      animation: headerGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes headerGlow {
+      0%, 100% {
+        box-shadow: 0 0 28px rgba(91, 159, 237, 0.65), 0 0 12px rgba(91, 159, 237, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 36px rgba(91, 159, 237, 0.75), 0 0 16px rgba(91, 159, 237, 0.9);
+      }
+    }
+
+    .tagline {
+      font-size: var(--font-sm);
+      font-weight: var(--weight-medium);
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-top: var(--space-2);
+      margin-bottom: var(--space-5);
+      opacity: 0.95;
+      text-shadow: 0 0 24px rgba(91, 159, 237, 0.35);
+    }
+
+    .name {
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      font-weight: var(--weight-normal);
+      letter-spacing: 0.01em;
+      color: var(--text-primary);
+      text-shadow: 0 0 64px rgba(91, 159, 237, 0.45),
+                   0 4px 12px rgba(0, 0, 0, 0.35),
+                   0 1px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: var(--space-2);
+      line-height: 1.15;
+    }
+
+    .title {
+      font-size: clamp(1rem, 2.5vw, 1.125rem);
+      font-weight: var(--weight-normal);
+      color: var(--text-secondary);
+      margin-bottom: var(--space-6);
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(0.75rem, 3vw, 1.5rem);
+      font-size: var(--font-sm);
+      color: var(--text-tertiary);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-3);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all var(--transition-base);
+    }
+
+    .contact-item:hover {
+      background: rgba(91, 159, 237, 0.08);
+      border-color: rgba(91, 159, 237, 0.35);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(91, 159, 237, 0.15);
+    }
+
+    .contact-item a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      transition: all var(--transition-base);
+      font-weight: var(--weight-medium);
+    }
+
+    .contact-item a:hover {
+      color: var(--accent-hover);
+    }
+
+    .contact-item a:focus-visible {
+      outline-offset: 2px;
+    }
+
+    /* Section Title - Enhanced visual hierarchy */
+    .section-title {
+      font-size: var(--font-base);
+      font-weight: var(--weight-semibold);
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: var(--space-6);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      position: relative;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: var(--accent-gradient-strong);
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-glow);
+      flex-shrink: 0;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.05) 70%,
+        transparent 100%
+      );
+    }
+
+    /* Summary */
+    .summary {
+      color: var(--text-secondary);
+      font-size: var(--font-base);
+      line-height: 1.75;
+      max-width: 75ch;
+      letter-spacing: 0.01em;
+    }
+
+    /* Skills Grid - Flip Cards */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+      gap: var(--space-4);
+    }
+
+    .skill-card {
+      height: 160px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .skill-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    .skill-card:hover .skill-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .skill-card-front,
+    .skill-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      text-align: center;
+    }
+
+    .skill-card-front {
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.065) 0%,
+        rgba(255, 255, 255, 0.025) 100%
+      );
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .skill-card-front::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 3px;
+      background: var(--accent-gradient-strong);
+      border-radius: 0 0 var(--radius-full) var(--radius-full);
+      box-shadow: 0 0 14px rgba(91, 159, 237, 0.6),
+                  0 0 6px rgba(91, 159, 237, 0.8);
+    }
+
+    .skill-card-back {
+      background: linear-gradient(
+        145deg,
+        rgba(91, 159, 237, 0.18) 0%,
+        rgba(61, 127, 207, 0.12) 100%
+      );
+      border: 1px solid rgba(91, 159, 237, 0.35);
+      transform: rotateY(180deg);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24),
+                  0 0 32px rgba(91, 159, 237, 0.2),
+                  inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .skill-card-front .skill-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: var(--space-3);
+      color: var(--accent-primary);
+      filter: drop-shadow(0 0 8px rgba(91, 159, 237, 0.5));
+    }
+
+    .skill-category-title {
+      font-weight: var(--weight-semibold);
+      font-size: var(--font-sm);
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.3;
+      text-shadow: 0 0 24px rgba(91, 159, 237, 0.4),
+                   0 2px 8px rgba(91, 159, 237, 0.3);
+    }
+
+    .skill-card-front .skill-hint {
+      font-size: var(--font-xs);
+      color: var(--text-muted);
+      margin-top: var(--space-3);
+      opacity: 0.7;
+    }
+
+    .skill-list {
+      font-size: var(--font-sm);
+      color: var(--text-primary);
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .skill-card-inner {
+        transition: none;
+      }
+      .skill-card:hover .skill-card-inner {
+        transform: none;
+      }
+      .skill-card-back {
+        transform: none;
+        position: relative;
+        margin-top: var(--space-2);
+      }
+    }
+
+    /* Experience */
+    .experience-item {
+      margin-bottom: var(--space-7);
+      padding-bottom: var(--space-7);
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+      padding-left: var(--space-5);
+    }
+
+    .experience-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    /* Timeline dot indicator */
+    .experience-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 11px;
+      height: 11px;
+      background: var(--accent-gradient-strong);
+      border-radius: 50%;
+      box-shadow: 0 0 14px rgba(91, 159, 237, 0.75),
+                  0 0 28px rgba(91, 159, 237, 0.45),
+                  0 0 6px rgba(91, 159, 237, 0.9);
+      border: 2px solid var(--bg-elevated);
+      animation: timelinePulse 3s ease-in-out infinite;
+    }
+
+    @keyframes timelinePulse {
+      0%, 100% {
+        box-shadow: 0 0 14px rgba(91, 159, 237, 0.75),
+                    0 0 28px rgba(91, 159, 237, 0.45),
+                    0 0 6px rgba(91, 159, 237, 0.9);
+      }
+      50% {
+        box-shadow: 0 0 18px rgba(91, 159, 237, 0.85),
+                    0 0 36px rgba(91, 159, 237, 0.55),
+                    0 0 8px rgba(91, 159, 237, 1);
+      }
+    }
+
+    /* Timeline line */
+    .experience-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 4.5px;
+      top: 22px;
+      bottom: -8px;
+      width: 2px;
+      background: linear-gradient(
+        180deg,
+        rgba(91, 159, 237, 0.35) 0%,
+        rgba(91, 159, 237, 0.15) 50%,
+        rgba(91, 159, 237, 0.06) 100%
+      );
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .job-title {
+      font-size: var(--font-lg);
+      font-weight: var(--weight-semibold);
+      color: var(--text-primary);
+      letter-spacing: 0.005em;
+      line-height: 1.3;
+      margin-bottom: var(--space-1);
+    }
+
+    .company {
+      font-size: var(--font-base);
+      color: var(--accent-primary);
+      font-weight: var(--weight-medium);
+      line-height: 1.4;
+      text-shadow: 0 0 16px rgba(91, 159, 237, 0.25);
+    }
+
+    [data-theme="light"] .company {
+      text-shadow: 0 0 16px rgba(37, 99, 235, 0.15);
+    }
+
+    .date-range {
+      font-size: var(--font-sm);
+      color: var(--text-tertiary);
+      font-weight: var(--weight-medium);
+      background: rgba(255, 255, 255, 0.04);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      transition: all var(--transition-base);
+    }
+
+    .experience-item:hover .date-range {
+      background: rgba(91, 159, 237, 0.08);
+      border-color: rgba(91, 159, 237, 0.2);
+    }
+
+    .job-bullets {
+      list-style: none;
+      padding-left: 0;
+      margin-top: var(--space-4);
+    }
+
+    .job-bullets li {
+      position: relative;
+      padding-left: var(--space-5);
+      margin-bottom: var(--space-3);
+      font-size: var(--font-sm);
+      color: var(--text-secondary);
+      line-height: 1.75;
+      letter-spacing: 0.01em;
+    }
+
+    .job-bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 11px;
+      width: 6px;
+      height: 6px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      opacity: 0.8;
+      box-shadow: 0 0 10px rgba(91, 159, 237, 0.5),
+                  0 0 4px rgba(91, 159, 237, 0.7);
+    }
+
+    /* Metrics highlight */
+    .metric {
+      color: var(--color-success);
+      font-weight: var(--weight-semibold);
+      white-space: nowrap;
+      text-shadow: 0 0 16px rgba(16, 185, 129, 0.3);
+    }
+
+    [data-theme="light"] .metric {
+      color: #059669;
+      text-shadow: 0 0 16px rgba(5, 150, 105, 0.2);
+    }
+
+    /* Certifications - 3D Cube Cards */
+    .certifications-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+      padding: var(--space-6) 0;
+      perspective: 1000px;
+    }
+
+    .cert-cube-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .cert-cube {
+      width: 140px;
+      height: 140px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .cert-cube:hover {
+      animation: rotateCube 8s infinite linear;
+    }
+
+    .cert-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--font-sm);
+      font-weight: var(--weight-semibold);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(
+        145deg,
+        #2a4a7d 0%,
+        #1e3a5f 25%,
+        #163050 50%,
+        #1e3a5f 75%,
+        #2a4a7d 100%
+      );
+      border: 2px solid rgba(91, 159, 237, 0.6);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      padding: var(--space-3);
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(91, 159, 237, 0.3),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                  inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .cert-face.front { transform: translateZ(70px); }
+    .cert-face.back { transform: translateZ(-70px) rotateY(180deg); }
+    .cert-face.right { transform: translateX(70px) rotateY(90deg); }
+    .cert-face.left { transform: translateX(-70px) rotateY(-90deg); }
+    .cert-face.top { transform: translateY(-70px) rotateX(90deg); }
+    .cert-face.bottom { transform: translateY(70px) rotateX(-90deg); }
+
+    /* Different border colors for each face */
+    .cert-face.front { border-color: var(--accent-primary); }
+    .cert-face.back { border-color: #00bcd4; }
+    .cert-face.right { border-color: #10b981; }
+    .cert-face.left { border-color: #f472b6; }
+    .cert-face.top { border-color: #fbbf24; }
+    .cert-face.bottom { border-color: #a78bfa; }
+
+    .cert-face .cert-icon {
+      width: 56px;
+      height: 56px;
+      color: var(--text-primary);
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    }
+
+    .cert-face .cert-badge-text {
+      font-size: var(--font-lg);
+      font-weight: var(--weight-bold);
+      color: var(--accent-primary);
+      text-shadow: 0 0 20px rgba(91, 159, 237, 0.5);
+    }
+
+    .cert-face .cert-label {
+      font-size: var(--font-xs);
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .cert-title {
+      font-size: var(--font-sm);
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 160px;
+      line-height: 1.4;
+    }
+
+    @keyframes rotateCube {
+      0% { transform: rotateX(0) rotateY(0); }
+      25% { transform: rotateX(90deg) rotateY(90deg); }
+      50% { transform: rotateX(180deg) rotateY(180deg); }
+      75% { transform: rotateX(270deg) rotateY(270deg); }
+      100% { transform: rotateX(360deg) rotateY(360deg); }
+    }
+
+    /* Light theme adjustments for cert cubes */
+    [data-theme="light"] .cert-face {
+      background: linear-gradient(
+        145deg,
+        #5b9fed 0%,
+        #4a8fdf 25%,
+        #3d7fcf 50%,
+        #4a8fdf 75%,
+        #5b9fed 100%
+      );
+      border-color: rgba(37, 99, 235, 0.6);
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                  inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .cert-face .cert-label {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    [data-theme="light"] .cert-face .cert-badge-text {
+      text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+    }
+
+    [data-theme="light"] .cert-face .cert-icon {
+      filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.3));
+    }
+
+
+    [data-theme="light"] .cert-cube:hover .cert-face.front {
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15),
+                  0 4px 16px rgba(0, 0, 0, 0.1),
+                  0 0 32px rgba(37, 99, 235, 0.3),
+                  inset 0 0 20px rgba(37, 99, 235, 0.08),
+                  inset 0 2px 4px rgba(37, 99, 235, 0.15),
+                  inset 0 -2px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    [data-theme="light"] .cert-cube:hover .cert-face.back {
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15),
+                  0 4px 16px rgba(0, 0, 0, 0.1),
+                  0 0 32px rgba(0, 188, 212, 0.3),
+                  inset 0 0 20px rgba(0, 188, 212, 0.08),
+                  inset 0 2px 4px rgba(0, 188, 212, 0.15),
+                  inset 0 -2px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    [data-theme="light"] .cert-cube:hover .cert-face.right {
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15),
+                  0 4px 16px rgba(0, 0, 0, 0.1),
+                  0 0 32px rgba(16, 185, 129, 0.3),
+                  inset 0 0 20px rgba(16, 185, 129, 0.08),
+                  inset 0 2px 4px rgba(16, 185, 129, 0.15),
+                  inset 0 -2px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    [data-theme="light"] .cert-cube:hover .cert-face.left {
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15),
+                  0 4px 16px rgba(0, 0, 0, 0.1),
+                  0 0 32px rgba(244, 114, 182, 0.3),
+                  inset 0 0 20px rgba(244, 114, 182, 0.08),
+                  inset 0 2px 4px rgba(244, 114, 182, 0.15),
+                  inset 0 -2px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    [data-theme="light"] .cert-cube:hover .cert-face.top {
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15),
+                  0 4px 16px rgba(0, 0, 0, 0.1),
+                  0 0 32px rgba(251, 191, 36, 0.3),
+                  inset 0 0 20px rgba(251, 191, 36, 0.08),
+                  inset 0 2px 4px rgba(251, 191, 36, 0.15),
+                  inset 0 -2px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    [data-theme="light"] .cert-cube:hover .cert-face.bottom {
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15),
+                  0 4px 16px rgba(0, 0, 0, 0.1),
+                  0 0 32px rgba(167, 139, 250, 0.3),
+                  inset 0 0 20px rgba(167, 139, 250, 0.08),
+                  inset 0 2px 4px rgba(167, 139, 250, 0.15),
+                  inset 0 -2px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    [data-theme="light"] .cert-face .cert-badge-text {
+      text-shadow: 0 0 24px rgba(37, 99, 235, 0.35),
+                   0 2px 8px rgba(37, 99, 235, 0.2);
+    }
+
+    [data-theme="light"] .cert-face .cert-icon {
+      filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.3));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cert-cube:hover {
+        animation: none;
+        transform: rotateX(-15deg) rotateY(15deg);
+      }
+      .experience-item::before {
+        animation: none;
+      }
+      .header-card::after,
+      [data-theme="light"] .header-card::after {
+        animation: none;
+      }
+      body::before {
+        animation: none;
+        transform: none;
+      }
+    }
+
+    /* Military */
+    .military-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+      padding: var(--space-4);
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(255, 255, 255, 0.01) 100%
+      );
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-lg);
+    }
+
+    .military-badge {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(145deg, #9B1C1C 0%, #C12121 50%, #DC2626 100%);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: var(--weight-bold);
+      font-size: var(--font-lg);
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(155, 28, 28, 0.6),
+                  0 2px 8px rgba(155, 28, 28, 0.4),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .military-info {
+      flex: 1;
+    }
+
+    .military-title {
+      font-weight: var(--weight-semibold);
+      color: var(--text-primary);
+      font-size: var(--font-base);
+      margin-bottom: var(--space-1);
+    }
+
+    .military-branch {
+      color: var(--text-tertiary);
+      font-size: var(--font-sm);
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: var(--font-xs);
+      color: var(--text-muted);
+      margin-top: var(--space-8);
+      padding-top: var(--space-6);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* Animations - Refined entrance animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        box-shadow: var(--shadow-lg);
+      }
+      50% {
+        box-shadow: var(--shadow-lg), 0 0 24px rgba(91, 159, 237, 0.12);
+      }
+    }
+
+    .glass-card {
+      animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .glass-card:nth-child(1) { animation-delay: 0s; }
+    .glass-card:nth-child(2) { animation-delay: 0.1s; }
+    .glass-card:nth-child(3) { animation-delay: 0.2s; }
+    .glass-card:nth-child(4) { animation-delay: 0.3s; }
+    .glass-card:nth-child(5) { animation-delay: 0.4s; }
+    .glass-card:nth-child(6) { animation-delay: 0.5s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .glass-card {
+        animation: none;
+      }
+      body::before {
+        animation: none;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skill-card {
+        height: 140px;
+      }
+
+      .certifications-grid {
+        gap: var(--space-6);
+      }
+
+      .cert-cube {
+        width: 120px;
+        height: 120px;
+      }
+
+      .cert-face.front { transform: translateZ(60px); }
+      .cert-face.back { transform: translateZ(-60px) rotateY(180deg); }
+      .cert-face.right { transform: translateX(60px) rotateY(90deg); }
+      .cert-face.left { transform: translateX(-60px) rotateY(-90deg); }
+      .cert-face.top { transform: translateY(-60px) rotateX(90deg); }
+      .cert-face.bottom { transform: translateY(60px) rotateX(-90deg); }
+
+      .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+      }
+
+      .date-range {
+        align-self: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-card {
+        padding-top: var(--space-6);
+        padding-bottom: var(--space-6);
+      }
+
+      .contact-info {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-2);
+      }
+
+      .contact-item {
+        justify-content: center;
+      }
+
+      .experience-item {
+        padding-left: 0;
+      }
+
+      .experience-item::before {
+        display: none;
+      }
+
+      .experience-item::after {
+        display: none;
+      }
+
+      .section-title {
+        font-size: var(--font-sm);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tagline {
+        letter-spacing: 0.15em;
+        font-size: 0.75rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-card {
+        height: 130px;
+      }
+
+      .skill-card-front .skill-icon {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    /* Print Styles - Comprehensive PDF-friendly output */
+    @media print {
+      /* Reset background and colors for clean print */
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      html {
+        font-size: 12pt;
+      }
+
+      body {
+        background: white !important;
+        color: #1a1a1a !important;
+        padding: 0.5in !important;
+        line-height: 1.5 !important;
+        margin: 0;
+      }
+
+      /* Hide interactive and decorative elements */
+      body::before,
+      #starfield,
+      .theme-toggle,
+      .download-button {
+        display: none !important;
+      }
+
+      /* Container adjustments */
+      .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Clean glass card styling */
+      .glass-card {
+        background: white !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 1.25rem !important;
+        padding: 1.25rem !important;
+        animation: none !important;
+        transform: none !important;
+      }
+
+      .glass-card::before {
+        display: none !important;
+      }
+
+      .glass-card:hover {
+        transform: none !important;
+        border-color: #e5e7eb !important;
+        box-shadow: none !important;
+      }
+
+      /* Header card styling */
+      .header-card {
+        padding: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .header-card::after {
+        background: #2563eb !important;
+        box-shadow: none !important;
+        animation: none !important;
+      }
+
+      /* Typography for print */
+      .name {
+        color: #1a1a1a !important;
+        text-shadow: none !important;
+        font-size: 28pt !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      .tagline {
+        color: #2563eb !important;
+        text-shadow: none !important;
+        font-size: 10pt !important;
+        letter-spacing: 0.1em !important;
+      }
+
+      .title {
+        color: #4b5563 !important;
+        font-size: 11pt !important;
+      }
+
+      .section-title {
+        color: #1a1a1a !important;
+        font-size: 12pt !important;
+        font-weight: 600 !important;
+        margin-bottom: 1rem !important;
+        page-break-after: avoid;
+      }
+
+      .section-title::before {
+        background: #2563eb !important;
+        box-shadow: none !important;
+      }
+
+      .section-title::after {
+        background: #e5e7eb !important;
+      }
+
+      /* Contact info */
+      .contact-info {
+        gap: 0.75rem !important;
+        margin-top: 1rem !important;
+      }
+
+      .contact-item {
+        border: 1px solid #e5e7eb !important;
+        background: #f9fafb !important;
+        color: #4b5563 !important;
+        padding: 0.25rem 0.75rem !important;
+        box-shadow: none !important;
+        transform: none !important;
+      }
+
+      .contact-item:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        border-color: #e5e7eb !important;
+        background: #f9fafb !important;
+      }
+
+      .contact-item a {
+        color: #2563eb !important;
+        text-decoration: none !important;
+        font-weight: 500 !important;
+      }
+
+      /* Summary section */
+      .summary {
+        color: #374151 !important;
+        font-size: 10.5pt !important;
+        line-height: 1.6 !important;
+      }
+
+      /* Flatten skill cards to show all content */
+      .skills-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+      }
+
+      .skill-card {
+        height: auto !important;
+        perspective: none !important;
+        page-break-inside: avoid;
+      }
+
+      .skill-card-inner {
+        transform: none !important;
+        transform-style: flat !important;
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      .skill-card-front,
+      .skill-card-back {
+        position: relative !important;
+        transform: none !important;
+        backface-visibility: visible !important;
+        -webkit-backface-visibility: visible !important;
+        background: white !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+      }
+
+      .skill-card-front {
+        border: 1px solid #e5e7eb !important;
+        border-radius: 6px 6px 0 0 !important;
+        border-bottom: none !important;
+        padding: 0.5rem 0.75rem !important;
+        background: #f0f9ff !important;
+      }
+
+      .skill-card-back {
+        border: 1px solid #e5e7eb !important;
+        border-radius: 0 0 6px 6px !important;
+        padding: 0.5rem 0.75rem !important;
+        background: white !important;
+      }
+
+      .skill-card-front::before,
+      .skill-hint {
+        display: none !important;
+      }
+
+      .skill-icon {
+        display: none !important;
+      }
+
+      .skill-category-title {
+        color: #2563eb !important;
+        text-shadow: none !important;
+        font-size: 10pt !important;
+        font-weight: 600 !important;
+        margin-bottom: 0 !important;
+        text-align: left !important;
+      }
+
+      .skill-list {
+        color: #374151 !important;
+        font-size: 9pt !important;
+        line-height: 1.5 !important;
+        text-align: left !important;
+      }
+
+      /* Experience section */
+      .experience-item {
+        margin-bottom: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+        padding-left: 1.25rem !important;
+        page-break-inside: avoid;
+      }
+
+      .experience-item:last-child {
+        border-bottom: none !important;
+      }
+
+      .experience-item::before {
+        background: #2563eb !important;
+        box-shadow: none !important;
+        animation: none !important;
+        border: 2px solid white !important;
+        left: 0 !important;
+        top: 6px !important;
+      }
+
+      .experience-item::after {
+        background: #e5e7eb !important;
+      }
+
+      .job-header {
+        gap: 0.5rem !important;
+        margin-bottom: 0.75rem !important;
+      }
+
+      .job-title {
+        color: #1a1a1a !important;
+        font-size: 11pt !important;
+        font-weight: 600 !important;
+        margin-bottom: 0.25rem !important;
+      }
+
+      .company {
+        color: #2563eb !important;
+        font-size: 10pt !important;
+        text-shadow: none !important;
+      }
+
+      .date-range {
+        color: #6b7280 !important;
+        font-size: 9pt !important;
+        background: #f9fafb !important;
+        border: 1px solid #e5e7eb !important;
+        padding: 0.25rem 0.75rem !important;
+        box-shadow: none !important;
+      }
+
+      .job-bullets {
+        margin-top: 0.75rem !important;
+      }
+
+      .job-bullets li {
+        color: #374151 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.6 !important;
+        margin-bottom: 0.5rem !important;
+        padding-left: 1.25rem !important;
+      }
+
+      .job-bullets li::before {
+        background: #2563eb !important;
+        box-shadow: none !important;
+        left: 6px !important;
+        top: 9px !important;
+      }
+
+      .metric {
+        color: #059669 !important;
+        font-weight: 600 !important;
+        text-shadow: none !important;
+      }
+
+      /* Flatten certification cubes for print - show as simple badges */
+      .certifications-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 1rem !important;
+        padding: 0 !important;
+        perspective: none !important;
+        justify-content: center !important;
+      }
+
+      .cert-cube-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        page-break-inside: avoid;
+      }
+
+      .cert-cube {
+        width: auto !important;
+        height: auto !important;
+        transform: none !important;
+        animation: none !important;
+        transform-style: flat !important;
+        position: relative !important;
+      }
+
+      .cert-cube:hover {
+        animation: none !important;
+        transform: none !important;
+      }
+
+      /* Hide all cube faces in print */
+      .cert-face {
+        display: none !important;
+      }
+
+      /* Show only the front face as a flat badge */
+      .cert-face.front {
+        display: flex !important;
+        position: relative !important;
+        transform: none !important;
+        width: auto !important;
+        height: auto !important;
+        min-width: 120px !important;
+        padding: 0.75rem 1rem !important;
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+        border: 2px solid #2563eb !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+        backface-visibility: visible !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0.25rem !important;
+      }
+
+      .cert-face .cert-icon {
+        display: none !important;
+      }
+
+      .cert-face.front .cert-badge-text {
+        font-size: 11pt !important;
+        font-weight: 600 !important;
+        color: #2563eb !important;
+        text-shadow: none !important;
+      }
+
+      .cert-face.front .cert-label {
+        font-size: 9pt !important;
+        color: #1e40af !important;
+        font-weight: 500 !important;
+      }
+
+      .cert-title {
+        display: none !important;
+      }
+
+      /* Military section */
+      .military-item {
+        background: #f9fafb !important;
+        border: 1px solid #e5e7eb !important;
+        box-shadow: none !important;
+        padding: 1rem !important;
+        page-break-inside: avoid;
+      }
+
+      .military-badge {
+        background: linear-gradient(145deg, #9B1C1C 0%, #C12121 50%, #DC2626 100%) !important;
+        box-shadow: none !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+        color: white !important;
+        text-shadow: none !important;
+      }
+
+      .military-title {
+        color: #1a1a1a !important;
+        font-size: 10.5pt !important;
+      }
+
+      .military-branch {
+        color: #6b7280 !important;
+        font-size: 9.5pt !important;
+      }
+
+      /* Footer */
+      .footer {
+        color: #9ca3af !important;
+        font-size: 8pt !important;
+        margin-top: 2rem !important;
+        page-break-before: avoid;
+      }
+
+      /* Page break controls */
+      .glass-card {
+        page-break-inside: avoid;
+      }
+
+      h1, h2, h3 {
+        page-break-after: avoid;
+      }
+
+      /* Ensure links are visible */
+      a[href]:after {
+        content: none !important;
+      }
+
+      /* Color adjustment for print accuracy */
+      * {
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"/>
+      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+  </button>
+
+  <!-- Download/Print PDF Button -->
+  <button class="download-button" id="downloadButton" aria-label="Download or print resume as PDF">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+      <polyline points="10 9 9 9 8 9"/>
+    </svg>
+    <span class="button-text">Download PDF</span>
+  </button>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="glass-card header-card">
+      <h1 class="name">Mathew Garcia</h1>
+      <p class="tagline">Cloud Solutions Architect • AI Fine Tuning • Cloud FinOps</p>
+      <div class="contact-info">
+        <span class="contact-item">📞 714-814-7063</span>
+        <span class="contact-item">✉️ <a href="mailto:Mat.Garcia@MVGConsulting.dev">Mat.Garcia@MVGConsulting.dev</a></span>
+        <span class="contact-item">🔗 <a href="https://linkedin.com/in/mathewvgarcia" target="_blank">linkedin.com/in/mathewvgarcia</a></span>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="glass-card">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary">
+        AI/ML Infrastructure Leader and Cloud FinOps Consultant with over ten years of experience spanning machine learning operations, cloud infrastructure, and cost optimization. Currently leading the technical development of MagisAI, including AI model training pipelines, multi-region AWS infrastructure, and custom product development. Expert in AWS technologies, LLM fine-tuning methodologies, cost optimization strategies, and full-stack development. Proven ability to architect scalable ML systems, achieve measurable cost savings, and align technical operations with organizational mission.
+      </p>
+    </div>
+
+    <!-- Skills -->
+    <div class="glass-card">
+      <h2 class="section-title">Key Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 4.5c-4.5 0-7.5 3-7.5 6 0 2.5 1.5 4.5 4 5.5v2.5a1 1 0 001 1h5a1 1 0 001-1V16c2.5-1 4-3 4-5.5 0-3-3-6-7.5-6z"/>
+                <path d="M9.5 19.5v1a2.5 2.5 0 005 0v-1"/>
+                <circle cx="9" cy="10" r="1.5"/><circle cx="15" cy="10" r="1.5"/>
+                <path d="M9 13.5c0 1 1.5 2 3 2s3-1 3-2"/>
+              </svg>
+              <div class="skill-category-title">AI/ML Engineering</div>
+              <span class="skill-hint">Hover to reveal</span>
+            </div>
+            <div class="skill-card-back">
+              <div class="skill-list">LLM Fine-Tuning, SFT, RAFT, DPO, RAG, Vector Databases, HITL Workflows</div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M6.5 19a4.5 4.5 0 110-9 .5.5 0 000-1 5 5 0 014-4.9 6 6 0 0111 4.4.5.5 0 00.5.5 4 4 0 01.5 7.97"/>
+                <path d="M12 13v8m0 0l-3-3m3 3l3-3"/>
+              </svg>
+              <div class="skill-category-title">Cloud & Infrastructure</div>
+              <span class="skill-hint">Hover to reveal</span>
+            </div>
+            <div class="skill-card-back">
+              <div class="skill-list">AWS (EC2, S3, RDS, Lambda), Multi-Region Architecture, GPU Compute, DR</div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 3v18h18"/>
+                <path d="M7 14l4-4 4 4 5-6"/>
+                <circle cx="20" cy="8" r="2"/>
+              </svg>
+              <div class="skill-category-title">FinOps</div>
+              <span class="skill-hint">Hover to reveal</span>
+            </div>
+            <div class="skill-card-back">
+              <div class="skill-list">Cost Optimization, Reserved Instances, Savings Plans, Capacity Planning</div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M16 18l6-6-6-6"/>
+                <path d="M8 6l-6 6 6 6"/>
+                <path d="M14.5 4l-5 16"/>
+              </svg>
+              <div class="skill-category-title">Full-Stack Development</div>
+              <span class="skill-hint">Hover to reveal</span>
+            </div>
+            <div class="skill-card-back">
+              <div class="skill-list">Python, JavaScript, Data Pipelines, Plotly Dashboards, Analytics</div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 3l9 4.5v5c0 5-3.5 9.5-9 11-5.5-1.5-9-6-9-11v-5L12 3z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+              <div class="skill-category-title">Compliance & Security</div>
+              <span class="skill-hint">Hover to reveal</span>
+            </div>
+            <div class="skill-card-back">
+              <div class="skill-list">FERPA, RBAC, Data Privacy, Security Architecture</div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-inner">
+            <div class="skill-card-front">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 3v9l6 3"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+              <div class="skill-category-title">Leadership</div>
+              <span class="skill-hint">Hover to reveal</span>
+            </div>
+            <div class="skill-card-back">
+              <div class="skill-list">Technical Strategy, Cross-functional Collaboration, Vendor Management</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="glass-card">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Head of MagisAI Infrastructure and Cloud Operations</div>
+            <div class="company">Magis Center for Reason and Faith</div>
+          </div>
+          <span class="date-range">05/2024 – Present</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Serve as senior technical leader responsible for designing, building, and scaling all technology powering MagisAI, a Catholic educational AI chatbot supporting <span class="metric">50,000–100,000 concurrent users</span> globally.</li>
+          <li>Design and implement human-in-the-loop (HITL) training workflows for continuous model improvement, including data curation interfaces for reviewing and editing Q&A pairs.</li>
+          <li>Build and manage fine-tuning pipelines using SFT, RAFT, and DPO methodologies on foundation models (Qwen2.5-14B-Instruct), with evaluation frameworks and metrics dashboards.</li>
+          <li>Architect and maintain AWS multi-region infrastructure spanning US, EU, APAC, and LATAM, managing GPU compute resources for model inference and training workloads.</li>
+          <li>Implement disaster recovery strategies, automated failover, and data replication ensuring high availability and compliance with regional data governance requirements.</li>
+          <li>Develop FERPA-compliant SafeChat Monitor system featuring real-time risk monitoring with keyword detection, alert routing, audit logging, and RBAC for K-12 deployments.</li>
+          <li>Build data pipelines aggregating analytics from Google Analytics, Apple App Analytics, and internal systems; create interactive Plotly dashboards for marketing and executive stakeholders.</li>
+          <li>Manage cloud FinOps achieving <span class="metric">80% cost reduction</span> at scale through strategic infrastructure decisions, reserved instances, savings plans, and capacity planning.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Cloud FinOps Consultant</div>
+            <div class="company">MVG Consulting</div>
+          </div>
+          <span class="date-range">05/2024 – Present</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Partner with multiple organizations, including Axiom and the Diocese of Orange County, to optimize cloud infrastructure and implement FinOps best practices, achieving up to <span class="metric">70% reductions</span> in compute costs.</li>
+          <li>Design cost-efficient ETL pipelines using AWS Glue, reducing operational expenses by thousands of dollars annually through selective data updates and dynamic workflows.</li>
+          <li>Implement optimized S3 storage architecture, minimizing storage costs for historical data while enabling advanced analytics and compliance reporting.</li>
+          <li>Deliver insights through dashboards for historical and trend analysis, improving decision-making and stakeholder collaboration.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Contract FinOps Analyst</div>
+            <div class="company">CVS Health</div>
+          </div>
+          <span class="date-range">09/2023 – 11/2023</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Conducted financial analysis to identify cloud cost trends and forecast expenses, contributing to actionable cost-saving strategies leveraging Snowflake.</li>
+          <li>Aligned cloud budgets with financial goals through collaboration with IT and finance teams.</li>
+          <li>Delivered financial reports to senior management, highlighting opportunities for optimization and improved resource utilization.</li>
+          <li>Led resource tagging initiatives, achieving significant cost reductions by eliminating untagged and underutilized resources.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Cloud FinOps Analyst</div>
+            <div class="company">Ingram Micro</div>
+          </div>
+          <span class="date-range">09/2022 – 07/2023</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Developed a Python-based AWS cost analysis tool, reducing multi-account data retrieval times and improving financial transparency.</li>
+          <li>Addressed inefficiencies in cloud infrastructure, resulting in improved performance and cost savings of up to <span class="metric">25%</span>.</li>
+          <li>Played a pivotal role in aligning cloud operations with business growth strategies, enhancing cost governance and operational effectiveness.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Business Analyst</div>
+            <div class="company">Tokio Marine America</div>
+          </div>
+          <span class="date-range">02/2022 – 08/2022</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Conducted business analysis and process improvement initiatives supporting enterprise operations.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Cloud FinOps Analyst</div>
+            <div class="company">Ingram Micro</div>
+          </div>
+          <span class="date-range">07/2013 – 04/2018</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Designed and integrated e-commerce systems for Ingram Micro, Amazon (AWS), and CloudChecker, supporting a <span class="metric">$24 million</span> annual revenue business.</li>
+          <li>Collaborated with C-level executives to produce and manage analytical dashboards and reporting.</li>
+          <li>Successfully managed <span class="metric">$60 million</span> worth of annual transactional billing and processing for Ingram Micro's cloud division.</li>
+          <li>Improved billing processes by expediting invoice delivery and shortening billing cycles by 10 business days.</li>
+          <li>Trained and mentored associates globally on business and technical processes.</li>
+          <li>Engaged with vendor stakeholders for long-term planning and roadmap development, focusing on revenue growth and ROI optimization.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="glass-card">
+      <h2 class="section-title">Certifications</h2>
+      <div class="certifications-grid">
+        <!-- AWS Cloud Practitioner -->
+        <div class="cert-cube-container">
+          <div class="cert-cube">
+            <div class="cert-face front">
+              <span class="cert-badge-text">Cloud</span>
+              <span class="cert-label">Practitioner</span>
+            </div>
+            <div class="cert-face back">
+              <span class="cert-badge-text">AWS</span>
+            </div>
+            <div class="cert-face right">
+              <span class="cert-badge-text">Certified</span>
+            </div>
+            <div class="cert-face left">
+              <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="8" r="5"/>
+                <path d="M12 13v6"/>
+                <path d="M9 22l3-3 3 3"/>
+                <path d="M8 6l2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="cert-face top">
+              <span class="cert-badge-text">AWS</span>
+            </div>
+            <div class="cert-face bottom">
+              <span class="cert-badge-text">AWS</span>
+            </div>
+          </div>
+                  </div>
+
+        <!-- FinOps Certified -->
+        <div class="cert-cube-container">
+          <div class="cert-cube">
+            <div class="cert-face front">
+              <span class="cert-badge-text">FinOps</span>
+              <span class="cert-label">Practitioner</span>
+            </div>
+            <div class="cert-face back">
+              <span class="cert-badge-text">FCP</span>
+            </div>
+            <div class="cert-face right">
+              <span class="cert-badge-text">Certified</span>
+            </div>
+            <div class="cert-face left">
+              <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="8" r="5"/>
+                <path d="M12 13v6"/>
+                <path d="M9 22l3-3 3 3"/>
+                <path d="M8 6l2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="cert-face top">
+              <span class="cert-badge-text">FCP</span>
+            </div>
+            <div class="cert-face bottom">
+              <span class="cert-badge-text">FCP</span>
+            </div>
+          </div>
+                  </div>
+      </div>
+    </div>
+
+    <!-- Military -->
+    <div class="glass-card">
+      <h2 class="section-title">Military Service</h2>
+      <div class="military-item">
+        <div class="military-badge">USMC</div>
+        <div class="military-info">
+          <div class="military-title">Lance Corporal</div>
+          <div class="military-branch">United States Marine Corps • 2010 – 2014</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer">References available upon request</p>
+  </div>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    // Get saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Download/Print PDF Button
+    const downloadButton = document.getElementById('downloadButton');
+
+    downloadButton.addEventListener('click', () => {
+      // Trigger the browser's print dialog, which allows saving as PDF
+      window.print();
+    });
+
+    // Enhanced Starfield Animation
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d', { alpha: true });
+    let particles = [];
+    let mouse = { x: null, y: null };
+    let animationId;
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Get theme colors from CSS variables
+    function getThemeColors() {
+      const style = getComputedStyle(document.documentElement);
+      const starColor = style.getPropertyValue('--star-color').trim() || '220, 235, 255';
+      const lineColor = style.getPropertyValue('--star-line-color').trim() || '91, 159, 237';
+      return { starColor, lineColor };
+    }
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+    }
+
+    function initParticles() {
+      particles = [];
+      const particleCount = window.innerWidth < 768 ? 50 : window.innerWidth < 1200 ? 80 : 120;
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.6 + 0.5,
+          vx: (Math.random() - 0.5) * 0.2,
+          vy: (Math.random() - 0.5) * 0.2,
+          opacity: Math.random() * 0.35 + 0.35,
+          twinkleSpeed: Math.random() * 0.012 + 0.006,
+          twinkleOffset: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const time = Date.now() * 0.001;
+      const { starColor, lineColor } = getThemeColors();
+
+      particles.forEach((p, i) => {
+        // Update position if motion is allowed
+        if (!prefersReducedMotion) {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Wrap around edges
+          if (p.x < 0) p.x = canvas.width;
+          if (p.x > canvas.width) p.x = 0;
+          if (p.y < 0) p.y = canvas.height;
+          if (p.y > canvas.height) p.y = 0;
+        }
+
+        // Twinkle effect
+        const twinkle = prefersReducedMotion ? 1 : Math.sin(time * p.twinkleSpeed * 10 + p.twinkleOffset) * 0.25 + 0.75;
+        const currentOpacity = p.opacity * twinkle;
+
+        // Draw particle with gradient for better appearance
+        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
+        gradient.addColorStop(0, `rgba(${starColor}, ${currentOpacity})`);
+        gradient.addColorStop(0.5, `rgba(${starColor}, ${currentOpacity * 0.6})`);
+        gradient.addColorStop(1, `rgba(${starColor}, 0)`);
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = gradient;
+        ctx.fill();
+
+        // Mouse interaction - draw connection lines
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - p.x;
+          const dy = mouse.y - p.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            const lineOpacity = 0.25 * (1 - dist / 150);
+            ctx.strokeStyle = `rgba(${lineColor}, ${lineOpacity})`;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+          }
+        }
+
+        // Connect nearby particles (optimized - only check forward)
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 110) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            const lineOpacity = 0.12 * (1 - dist / 110);
+            ctx.strokeStyle = `rgba(${lineColor}, ${lineOpacity})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      });
+
+      animationId = requestAnimationFrame(drawParticles);
+    }
+
+    // Debounced resize handler
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resizeCanvas, 150);
+    });
+
+    // Mouse tracking with throttling
+    let mouseMoveTimeout;
+    document.addEventListener('mousemove', (e) => {
+      if (!mouseMoveTimeout) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouseMoveTimeout = setTimeout(() => {
+          mouseMoveTimeout = null;
+        }, 16); // ~60fps
+      }
+    });
+
+    document.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    // Initialize
+    resizeCanvas();
+    if (!prefersReducedMotion) {
+      drawParticles();
+    } else {
+      // Draw static starfield for reduced motion
+      drawParticles();
+      cancelAnimationFrame(animationId);
+    }
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+      cancelAnimationFrame(animationId);
+    });
+  </script>
+</body>
+</html>
