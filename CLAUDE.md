@@ -7,7 +7,7 @@ Web-based interactive resume for Mathew Garcia with modern glassmorphism design.
 - `index.html` - Single-file HTML resume with embedded CSS and JavaScript
 - `fonts/inter-latin-var.woff2` - Self-hosted Inter variable font (Latin subset, weights 100–900), the only font the page loads
 - `fonts/LICENSE-Inter.txt` - SIL Open Font License for Inter (keep it next to the font)
-- `Mathew_Garcia_Resume_Updated.docx` - Reference Word document for content
+- `Mathew_Garcia_Resume_Updated.docx` - Reference Word document; its content predates the November 2026 update, so the site is the source of truth until it is regenerated
 
 ## Deployment
 
@@ -35,10 +35,19 @@ Hosted on GitHub Pages at: https://mat-v-garcia.github.io/Resume/
   - Glow pulses on the header bar and timeline dots animate `opacity`, not `box-shadow`
 - **Reduced motion**: starfield is static and skill cards show both faces stacked in flow
 - **Semantics**: `<main>`, `<header>`, one `<section aria-labelledby>` per card, `<footer>`, `<h3>` job titles; decorative SVGs and the canvas are `aria-hidden`
-- **Contact chips** are the links themselves (`tel:`, `mailto:`, LinkedIn with `rel="noopener noreferrer"`) with inline SVG icons instead of emoji
+- **Contact chips** are the links themselves (email, LinkedIn, GitHub, all with `rel="noopener noreferrer"` where they open a new tab) with inline SVG icons instead of emoji; the phone number is deliberately not on the public page
+- **Footer** links to GitHub and the live App Store and Google Play listings for MagisAI and Pray Serve
 - **Head metadata**: description, theme-color, canonical, SVG favicon (data URI), Open Graph and Twitter tags, and a schema.org Person JSON-LD block
 - **PDF Export**: Print-friendly styles via `@media print`; `beforeprint` renames the document so the saved file is `Mathew_Garcia_Resume.pdf`
 - **Responsive**: Mobile-first with clamp() and media queries
+
+## Content Conventions
+
+- Headline everywhere is "AI Product & Infrastructure Lead • Mobile + Cloud • FinOps": the `<title>`, the tagline, the meta description, the Open Graph tags and the summary all follow it. Change them together.
+- Experience holds eight entries. The three concurrent roles are ordered Magis Center (primary employer), Stack 26 (products for the Diocese of Orange), MVG Consulting (FinOps and consulting); the rest are reverse chronological.
+- Numbers in bullets come from Mat's own reports and repos (the September 2026 cost model, the October 2026 board deck, release notes, README evaluations). Do not add a figure without a source.
+- Work shared with the MagisAI lab (the answer engine and corpus) is described as "co-built"; the app, gateway, Firebase, store pipeline, cost model and compliance work are Mat's.
+- DPO is intentionally absent: the fine-tuning work used SFT, LoRA, QLoRA and RAFT.
 
 ## Design System
 
@@ -60,36 +69,37 @@ Hosted on GitHub Pages at: https://mat-v-garcia.github.io/Resume/
 - BEM-like class naming (e.g., `.skill-card-front`, `.cert-cube-container`)
 - `transition` lists name their properties explicitly; do not use `transition: all`
 - Page-break control uses the modern `break-*` properties
-- Inline head script at ~line 16, `@font-face` at ~line 31, no-blur fallback block at ~line 1395, print styles from ~line 1431 to the end of `<style>`
-- Main JavaScript at end of `<body>` (~line 2203)
+- Inline head script at ~line 16, `@font-face` at ~line 31, no-blur fallback block at ~line 1407, print styles from ~line 1443 to the end of `<style>`
+- Main JavaScript at end of `<body>` (~line 2258)
 
 ## Common Tasks
 
 ### Update Resume Content
 Edit the HTML directly in `index.html`. Key sections (line numbers are approximate):
-- Header: ~line 1887
-- Summary: ~line 1907
-- Skills: ~line 1915
-- Experience: ~line 2017
-- Certifications: ~line 2120
-- Military: ~line 2188
+- Header: ~line 1904
+- Summary: ~line 1924
+- Skills: ~line 1932
+- Experience: ~line 2034
+- Certifications: ~line 2169
+- Military: ~line 2237
 
-When the headline or summary changes, update the `<meta name="description">`, the Open Graph description and the JSON-LD `jobTitle` in `<head>` to match.
+When the headline or summary changes, update the `<meta name="description">`, the Open Graph description and the JSON-LD `jobTitle` in `<head>` to match. Wrap a standout number in `<span class="metric">` (keep the span short; it does not wrap).
 
 ### Modify Print Styles
-Edit `@media print` block starting at ~line 1431. The current settings produce three Letter pages: a 10pt base, tightened card and bullet spacing, a three-column skills grid, cards that may break across pages while each job header stays with its bullets, and the Military section held with the certifications. Key considerations:
+Edit `@media print` block starting at ~line 1443. The settings are already tight: a 10pt base, compact card and bullet spacing, a three-column skills grid, cards that may break across pages while each job header stays with its bullets, and the Military section held with the certifications. With the November 2026 content the PDF runs four Letter pages; it was three before the content grew. Fewer bullets, not more CSS, is what would bring it back to three. Key considerations:
 - Hide animations, starfield, buttons
 - Flatten 3D elements (cubes, flip cards)
 - Use solid backgrounds for readability
 - Keep `.cert-title` visible so the PDF names each certification
-- Two pages would need fewer bullets, not more CSS
 
 ### Add New Skill Card
 Copy an existing `.skill-card` div, including its `tabindex="0" role="button" aria-expanded="false"` attributes, and update:
 - Icon SVG in `.skill-card-front` (keep `aria-hidden="true" focusable="false"`)
 - Title in `.skill-category-title`
-- Skills in `.skill-list`
+- Skills in `.skill-list` (about 120 characters fits the card at every width)
 - Leave the `.skill-hint` span empty; its text ("Hover to reveal" / "Tap to reveal") comes from CSS
+
+The grid is balanced at six cards; a seventh leaves an orphan row.
 
 ### Add New Certification
 Copy an existing `.cert-cube-container` div, update the text in the `.cert-face` elements, and set the full name in the `<p class="cert-title">` after the cube.
