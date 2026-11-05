@@ -1,4 +1,4 @@
-"""Regenerate Mathew_Garcia_Resume_Updated.docx from index.html.
+"""Regenerate Mathew_Garcia_Resume.docx from index.html.
 
     python tools/build_docx.py                      # rewrites the .docx next to index.html
     python tools/build_docx.py out=C:/tmp/test.docx # write elsewhere (for checking a layout)
@@ -24,7 +24,7 @@ import zipfile
 from xml.sax.saxutils import escape
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCX = os.path.join(REPO, 'Mathew_Garcia_Resume_Updated.docx')
+DOCX = os.path.join(REPO, 'Mathew_Garcia_Resume.docx')
 LOCATION = 'Anaheim, CA'
 
 # Layout tunables: twips for spacing and margins, half-points for type size.

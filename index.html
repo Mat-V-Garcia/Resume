@@ -201,12 +201,17 @@
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
-    /* Download/Print Button */
-    .download-button {
+    /* Download menu: a fixed pill (the <summary>) that opens the PDF, Word and print options */
+    .download-menu {
       position: fixed;
       top: 5.5rem;
       right: 1.5rem;
       z-index: 100;
+    }
+
+    .download-button {
+      list-style: none;
+      user-select: none;
       padding: var(--space-3) var(--space-5);
       border-radius: var(--radius-full);
       border: 1px solid var(--border-default);
@@ -241,6 +246,15 @@
       transform: translateY(0);
     }
 
+    .download-button::-webkit-details-marker {
+      display: none;
+    }
+
+    .download-menu[open] .download-button {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+
     .download-button svg {
       width: 20px;
       height: 20px;
@@ -259,13 +273,83 @@
                   0 8px 24px rgba(0, 0, 0, 0.28);
     }
 
-    /* Responsive adjustments for download button */
+    .download-options {
+      position: absolute;
+      top: calc(100% + var(--space-2));
+      right: 0;
+      min-width: 15rem;
+      padding: var(--space-2);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-default);
+      background: var(--bg-elevated);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      display: grid;
+      gap: var(--space-1);
+    }
+
+    [data-theme="light"] .download-options {
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+    }
+
+    .download-option {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      width: 100%;
+      padding: var(--space-2) var(--space-3);
+      border: 0;
+      border-radius: 10px;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      font-size: var(--font-sm);
+      font-weight: var(--weight-medium);
+      color: var(--text-secondary);
+      text-align: left;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color var(--transition-base), color var(--transition-base);
+    }
+
+    .download-option:hover,
+    .download-option:focus-visible {
+      background: rgba(91, 159, 237, 0.12);
+      color: var(--accent-primary);
+    }
+
+    [data-theme="light"] .download-option:hover,
+    [data-theme="light"] .download-option:focus-visible {
+      background: rgba(37, 99, 235, 0.08);
+    }
+
+    .download-option svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--text-tertiary);
+      transition: color var(--transition-base);
+    }
+
+    .download-option:hover svg,
+    .download-option:focus-visible svg {
+      color: var(--accent-primary);
+    }
+
+    /* Phones: the menu sits at the bottom-right as an icon and opens upward */
     @media (max-width: 768px) {
-      .download-button {
+      .download-menu {
         top: auto;
         bottom: 1.5rem;
         right: 1.5rem;
+      }
+
+      .download-button {
         padding: var(--space-3);
+      }
+
+      .download-options {
+        top: auto;
+        bottom: calc(100% + var(--space-2));
       }
 
       .download-button .button-text {
@@ -1468,7 +1552,7 @@
       body::before,
       #starfield,
       .theme-toggle,
-      .download-button {
+      .download-menu {
         display: none !important;
       }
 
@@ -1888,17 +1972,31 @@
     </svg>
   </button>
 
-  <!-- Download/Print PDF Button -->
-  <button class="download-button" id="downloadButton">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-      <polyline points="14 2 14 8 20 8"/>
-      <line x1="16" y1="13" x2="8" y2="13"/>
-      <line x1="16" y1="17" x2="8" y2="17"/>
-      <polyline points="10 9 9 9 8 9"/>
-    </svg>
-    <span class="button-text">Download PDF</span>
-  </button>
+  <!-- Download menu: the PDF and Word files kept in this repo, or the browser's print dialog -->
+  <details class="download-menu" id="downloadMenu">
+    <summary class="download-button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      <span class="button-text">Download</span>
+    </summary>
+    <div class="download-options">
+      <a class="download-option" href="Mathew_Garcia_Resume.pdf" download="Mathew_Garcia_Resume.pdf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Download PDF
+      </a>
+      <a class="download-option" href="Mathew_Garcia_Resume.docx" download="Mathew_Garcia_Resume.docx">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+        Download Word (.docx)
+      </a>
+      <button type="button" class="download-option" id="printButton">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print this page
+      </button>
+    </div>
+  </details>
 
   <main class="container">
     <!-- Header -->
@@ -2278,11 +2376,24 @@
       colors = getThemeColors();
     });
 
-    // Download/Print PDF Button
-    const downloadButton = document.getElementById('downloadButton');
+    // Download menu: <details> does the toggling; close it on Escape, on a click outside, and after a choice
+    const downloadMenu = document.getElementById('downloadMenu');
+    const downloadSummary = downloadMenu.querySelector('summary');
 
-    downloadButton.addEventListener('click', () => {
-      // Trigger the browser's print dialog, which allows saving as PDF
+    document.addEventListener('click', (event) => {
+      if (downloadMenu.open && !downloadMenu.contains(event.target)) downloadMenu.open = false;
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && downloadMenu.open) {
+        downloadMenu.open = false;
+        downloadSummary.focus();
+      }
+    });
+    downloadMenu.querySelectorAll('.download-option').forEach((option) => {
+      option.addEventListener('click', () => { downloadMenu.open = false; });
+    });
+    document.getElementById('printButton').addEventListener('click', () => {
+      // The browser's print dialog; its "Save as PDF" gives the page itself, the menu's PDF is the Word layout
       window.print();
     });
 
