@@ -4,21 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mathew Garcia - AI/ML Infrastructure Leader</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet">
+  <meta name="description" content="Resume of Mathew Garcia, AI/ML infrastructure leader and Cloud FinOps consultant: LLM fine-tuning, multi-region AWS infrastructure and cloud cost optimization for MagisAI and consulting clients.">
+  <meta name="theme-color" content="#0f1419">
+  <link rel="canonical" href="https://mat-v-garcia.github.io/Resume/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%235B9FED'/%3E%3Ctext x='16' y='22' font-family='Arial,Helvetica,sans-serif' font-size='16' font-weight='700' text-anchor='middle' fill='%230f1419'%3EMG%3C/text%3E%3C/svg%3E">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Mathew Garcia – Resume">
+  <meta property="og:description" content="AI/ML infrastructure leader and Cloud FinOps consultant: LLM fine-tuning, multi-region AWS infrastructure and cloud cost optimization.">
+  <meta property="og:url" content="https://mat-v-garcia.github.io/Resume/">
+  <meta name="twitter:card" content="summary">
+  <script>
+    // Apply the saved or system theme before first paint so the page never flashes the wrong colors
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      document.documentElement.setAttribute('data-theme', stored || (prefersLight ? 'light' : 'dark'));
+    })();
+  </script>
+  <link rel="preload" href="fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Mathew Garcia","jobTitle":"Head of MagisAI Infrastructure and Cloud Operations","worksFor":{"@type":"Organization","name":"Magis Center for Reason and Faith"},"email":"mailto:Mat.Garcia@MVGConsulting.dev","url":"https://mat-v-garcia.github.io/Resume/","sameAs":["https://linkedin.com/in/mathewvgarcia","https://github.com/Mat-V-Garcia"]}
+  </script>
   <style>
+    /* Self-hosted Inter (SIL Open Font License, see fonts/LICENSE-Inter.txt): one variable file, no third-party request */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url('fonts/inter-latin-var.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     :root {
       /* Animation & Transition */
-      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 
       /* Border Radius */
-      --radius-sm: 6px;
-      --radius-md: 10px;
       --radius-lg: 14px;
-      --radius-xl: 20px;
       --radius-2xl: 24px;
       --radius-full: 9999px;
 
@@ -31,20 +56,14 @@
       --space-6: 2rem;      /* 32px */
       --space-7: 2.5rem;    /* 40px */
       --space-8: 3rem;      /* 48px */
-      --space-10: 4rem;     /* 64px */
 
       /* Typography - Refined modular scale */
       --font-xs: 0.8125rem;  /* 13px */
       --font-sm: 0.9375rem;  /* 15px */
       --font-base: 1rem;     /* 16px */
       --font-lg: 1.125rem;   /* 18px */
-      --font-xl: 1.3125rem;  /* 21px */
-      --font-2xl: 1.625rem;  /* 26px */
-      --font-3xl: 2rem;      /* 32px */
-      --font-4xl: 2.5rem;    /* 40px */
 
       /* Font Weights */
-      --weight-light: 300;
       --weight-normal: 400;
       --weight-medium: 500;
       --weight-semibold: 600;
@@ -59,33 +78,20 @@
 
       --border-subtle: rgba(255, 255, 255, 0.06);
       --border-default: rgba(255, 255, 255, 0.1);
-      --border-strong: rgba(255, 255, 255, 0.16);
 
       --text-primary: rgba(255, 255, 255, 0.96);
       --text-secondary: rgba(255, 255, 255, 0.78);
       --text-tertiary: rgba(255, 255, 255, 0.58);
-      --text-muted: rgba(255, 255, 255, 0.42);
+      --text-muted: rgba(255, 255, 255, 0.6);
 
       --accent-primary: #5B9FED;
       --accent-hover: #7BB2F5;
-      --accent-active: #3D7FCF;
-      --accent-secondary: #2A4A7D;
-      --accent-gradient: linear-gradient(135deg, rgba(91, 159, 237, 0.25), rgba(61, 127, 207, 0.15));
       --accent-gradient-strong: linear-gradient(135deg, #5B9FED 0%, #4A8FDF 50%, #3D7FCF 100%);
 
       --color-success: #10b981;
-      --color-warning: #f59e0b;
-      --color-error: #ef4444;
 
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
-      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.16);
-      --shadow-lg: 0 8px 32px rgba(10, 20, 50, 0.28);
-      --shadow-xl: 0 16px 48px rgba(10, 20, 50, 0.32);
       --shadow-glow: 0 0 32px rgba(91, 159, 237, 0.25);
-      --shadow-glow-strong: 0 0 48px rgba(91, 159, 237, 0.4);
 
-      --glass-blur: blur(12px);
-      --glass-saturate: saturate(180%);
 
       /* Starfield colors */
       --star-color: 220, 235, 255;
@@ -102,26 +108,17 @@
 
       --border-subtle: rgba(0, 0, 0, 0.06);
       --border-default: rgba(0, 0, 0, 0.1);
-      --border-strong: rgba(0, 0, 0, 0.16);
 
       --text-primary: rgba(15, 23, 42, 0.96);
       --text-secondary: rgba(15, 23, 42, 0.78);
-      --text-tertiary: rgba(15, 23, 42, 0.58);
-      --text-muted: rgba(15, 23, 42, 0.42);
+      --text-tertiary: rgba(15, 23, 42, 0.66);
+      --text-muted: rgba(15, 23, 42, 0.62);
 
       --accent-primary: #2563eb;
       --accent-hover: #1d4ed8;
-      --accent-active: #1e40af;
-      --accent-secondary: #3b82f6;
-      --accent-gradient: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(29, 78, 216, 0.1));
       --accent-gradient-strong: linear-gradient(135deg, #2563eb 0%, #1e56d8 50%, #1d4ed8 100%);
 
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
-      --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12);
       --shadow-glow: 0 0 32px rgba(37, 99, 235, 0.15);
-      --shadow-glow-strong: 0 0 48px rgba(37, 99, 235, 0.25);
 
       --star-color: 37, 99, 235;
       --star-line-color: 37, 99, 235;
@@ -134,7 +131,7 @@
     }
 
     html {
-      font-size: 16px;
+      font-size: 100%;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -168,7 +165,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all var(--transition-base);
+      transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2),
                   inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
     }
@@ -189,7 +186,7 @@
       width: 24px;
       height: 24px;
       color: var(--text-secondary);
-      transition: all var(--transition-base);
+      transition: color var(--transition-base), filter var(--transition-base);
       filter: drop-shadow(0 0 4px rgba(91, 159, 237, 0));
     }
 
@@ -220,7 +217,7 @@
       display: flex;
       align-items: center;
       gap: var(--space-2);
-      transition: all var(--transition-base);
+      transition: border-color var(--transition-base), background-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2),
                   inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
       font-family: 'Inter', sans-serif;
@@ -247,7 +244,7 @@
     .download-button svg {
       width: 20px;
       height: 20px;
-      transition: all var(--transition-base);
+      transition: filter var(--transition-base);
       filter: drop-shadow(0 0 4px rgba(91, 159, 237, 0));
     }
 
@@ -272,7 +269,15 @@
       }
 
       .download-button .button-text {
-        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
     }
 
@@ -468,7 +473,7 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24),
                   0 1px 4px rgba(0, 0, 0, 0.12),
                   inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
-      transition: all var(--transition-slow);
+      transition: border-color var(--transition-slow), box-shadow var(--transition-slow), transform var(--transition-slow);
       position: relative;
     }
 
@@ -565,18 +570,6 @@
       line-height: 1.15;
     }
 
-    .title {
-      font-size: clamp(1rem, 2.5vw, 1.125rem);
-      font-weight: var(--weight-normal);
-      color: var(--text-secondary);
-      margin-bottom: var(--space-6);
-      letter-spacing: 0.01em;
-      line-height: 1.5;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
     .contact-info {
       display: flex;
       flex-wrap: wrap;
@@ -596,30 +589,34 @@
       background: rgba(255, 255, 255, 0.03);
       border-radius: var(--radius-full);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all var(--transition-base);
+      color: var(--accent-primary);
+      font-weight: var(--weight-medium);
+      text-decoration: none;
+      transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
     }
 
     .contact-item:hover {
       background: rgba(91, 159, 237, 0.08);
       border-color: rgba(91, 159, 237, 0.35);
+      color: var(--accent-hover);
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(91, 159, 237, 0.15);
     }
 
-    .contact-item a {
-      color: var(--accent-primary);
-      text-decoration: none;
-      transition: all var(--transition-base);
-      font-weight: var(--weight-medium);
-      overflow-wrap: anywhere;
-    }
-
-    .contact-item a:hover {
-      color: var(--accent-hover);
-    }
-
-    .contact-item a:focus-visible {
+    .contact-item:focus-visible {
       outline-offset: 2px;
+    }
+
+    .contact-item .contact-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      color: var(--text-tertiary);
+    }
+
+    .contact-item span {
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     /* Section Title - Enhanced visual hierarchy */
@@ -777,7 +774,6 @@
       font-size: var(--font-xs);
       color: var(--text-muted);
       margin-top: var(--space-3);
-      opacity: 0.7;
     }
 
     .skill-hint::after {
@@ -925,7 +921,7 @@
       border: 1px solid rgba(255, 255, 255, 0.09);
       white-space: nowrap;
       font-variant-numeric: tabular-nums;
-      transition: all var(--transition-base);
+      transition: background-color var(--transition-base), border-color var(--transition-base);
     }
 
     .experience-item:hover .date-range {
@@ -976,7 +972,7 @@
     }
 
     [data-theme="light"] .metric {
-      color: #059669;
+      color: #047857;
       text-shadow: 0 0 16px rgba(5, 150, 105, 0.2);
     }
 
@@ -1034,7 +1030,7 @@
         #2a4a7d 100%
       );
       border: 2px solid rgba(91, 159, 237, 0.6);
-      transition: all 0.3s ease;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
       overflow: hidden;
       padding: var(--space-3);
       text-align: center;
@@ -1259,7 +1255,6 @@
       padding-top: var(--space-6);
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      opacity: 0.5;
       border-top: 1px solid var(--border-subtle);
     }
 
@@ -1272,15 +1267,6 @@
       to {
         opacity: 1;
         transform: translateY(0);
-      }
-    }
-
-    @keyframes glowPulse {
-      0%, 100% {
-        box-shadow: var(--shadow-lg);
-      }
-      50% {
-        box-shadow: var(--shadow-lg), 0 0 24px rgba(91, 159, 237, 0.12);
       }
     }
 
@@ -1443,6 +1429,11 @@
 
     /* Print Styles - Comprehensive PDF-friendly output */
     @media print {
+      @page {
+        size: letter;
+        margin: 0.5in;
+      }
+
       /* Reset background and colors for clean print */
       * {
         animation: none !important;
@@ -1450,13 +1441,13 @@
       }
 
       html {
-        font-size: 12pt;
+        font-size: 10pt;
       }
 
       body {
         background: white !important;
         color: #1a1a1a !important;
-        padding: 0.5in !important;
+        padding: 0 !important;
         line-height: 1.5 !important;
         margin: 0;
       }
@@ -1484,9 +1475,9 @@
         box-shadow: none !important;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
-        page-break-inside: avoid;
-        margin-bottom: 1.25rem !important;
-        padding: 1.25rem !important;
+        break-inside: auto;
+        margin-bottom: 0.75rem !important;
+        padding: 0.75rem 1rem !important;
         animation: none !important;
         transform: none !important;
       }
@@ -1503,8 +1494,8 @@
 
       /* Header card styling */
       .header-card {
-        padding: 1.5rem !important;
-        margin-bottom: 1.5rem !important;
+        padding: 1rem !important;
+        margin-bottom: 0.75rem !important;
       }
 
       .header-card::after {
@@ -1528,17 +1519,12 @@
         letter-spacing: 0.1em !important;
       }
 
-      .title {
-        color: #4b5563 !important;
-        font-size: 11pt !important;
-      }
-
       .section-title {
         color: #1a1a1a !important;
         font-size: 12pt !important;
         font-weight: 600 !important;
-        margin-bottom: 1rem !important;
-        page-break-after: avoid;
+        margin-bottom: 0.6rem !important;
+        break-after: avoid;
       }
 
       .section-title::before {
@@ -1559,7 +1545,8 @@
       .contact-item {
         border: 1px solid #e5e7eb !important;
         background: #f9fafb !important;
-        color: #4b5563 !important;
+        color: #1d4ed8 !important;
+        text-decoration: none !important;
         padding: 0.25rem 0.75rem !important;
         box-shadow: none !important;
         transform: none !important;
@@ -1572,30 +1559,29 @@
         background: #f9fafb !important;
       }
 
-      .contact-item a {
-        color: #2563eb !important;
-        text-decoration: none !important;
-        font-weight: 500 !important;
-      }
-
       /* Summary section */
       .summary {
         color: #374151 !important;
-        font-size: 10.5pt !important;
-        line-height: 1.6 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.45 !important;
+      }
+
+      /* Keep the last section (Military) with the certifications instead of alone on a new page */
+      section:last-of-type {
+        break-before: avoid;
       }
 
       /* Flatten skill cards to show all content */
       .skills-grid {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.75rem !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.5rem !important;
       }
 
       .skill-card {
         height: auto !important;
         perspective: none !important;
-        page-break-inside: avoid;
+        break-inside: avoid;
       }
 
       .skill-card-inner {
@@ -1658,11 +1644,12 @@
       }
 
       /* Experience section */
+      /* Jobs may break across pages, but a job header always stays with its first bullets */
       .experience-item {
-        margin-bottom: 1.5rem !important;
-        padding-bottom: 1.5rem !important;
+        margin-bottom: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
         padding-left: 1.25rem !important;
-        page-break-inside: avoid;
+        break-inside: auto;
       }
 
       .experience-item:last-child {
@@ -1684,7 +1671,8 @@
 
       .job-header {
         gap: 0.5rem !important;
-        margin-bottom: 0.75rem !important;
+        margin-bottom: 0.4rem !important;
+        break-after: avoid;
       }
 
       .job-title {
@@ -1710,15 +1698,16 @@
       }
 
       .job-bullets {
-        margin-top: 0.75rem !important;
+        margin-top: 0.4rem !important;
       }
 
       .job-bullets li {
         color: #374151 !important;
         font-size: 9.5pt !important;
-        line-height: 1.6 !important;
-        margin-bottom: 0.5rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.2rem !important;
         padding-left: 1.25rem !important;
+        break-inside: avoid;
       }
 
       .job-bullets li::before {
@@ -1749,7 +1738,7 @@
         flex-direction: column !important;
         align-items: center !important;
         gap: 0.5rem !important;
-        page-break-inside: avoid;
+        break-inside: avoid;
       }
 
       .cert-cube {
@@ -1820,7 +1809,8 @@
         border: 1px solid #e5e7eb !important;
         box-shadow: none !important;
         padding: 1rem !important;
-        page-break-inside: avoid;
+        break-inside: avoid;
+        break-before: avoid;
       }
 
       .military-badge {
@@ -1844,19 +1834,14 @@
 
       /* Footer */
       .footer {
-        color: #9ca3af !important;
+        color: #6b7280 !important;
         font-size: 8pt !important;
         margin-top: 2rem !important;
-        page-break-before: avoid;
-      }
-
-      /* Page break controls */
-      .glass-card {
-        page-break-inside: avoid;
+        break-before: avoid;
       }
 
       h1, h2, h3 {
-        page-break-after: avoid;
+        break-after: avoid;
       }
 
       /* Ensure links are visible */
@@ -1873,22 +1858,22 @@
   </style>
 </head>
 <body>
-  <canvas id="starfield"></canvas>
+  <canvas id="starfield" aria-hidden="true"></canvas>
 
   <!-- Theme Toggle Button -->
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
       <circle cx="12" cy="12" r="5"/>
       <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
     </svg>
-    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
       <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
     </svg>
   </button>
 
   <!-- Download/Print PDF Button -->
-  <button class="download-button" id="downloadButton" aria-label="Download or print resume as PDF">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <button class="download-button" id="downloadButton">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
       <polyline points="14 2 14 8 20 8"/>
       <line x1="16" y1="13" x2="8" y2="13"/>
@@ -1898,34 +1883,43 @@
     <span class="button-text">Download PDF</span>
   </button>
 
-  <div class="container">
+  <main class="container">
     <!-- Header -->
-    <div class="glass-card header-card">
+    <header class="glass-card header-card">
       <h1 class="name">Mathew Garcia</h1>
       <p class="tagline">Cloud Solutions Architect • AI Fine Tuning • Cloud FinOps</p>
       <div class="contact-info">
-        <span class="contact-item">📞 714-814-7063</span>
-        <span class="contact-item">✉️ <a href="mailto:Mat.Garcia@MVGConsulting.dev">Mat.Garcia@MVGConsulting.dev</a></span>
-        <span class="contact-item">🔗 <a href="https://linkedin.com/in/mathewvgarcia" target="_blank">linkedin.com/in/mathewvgarcia</a></span>
+        <a class="contact-item" href="tel:+17148147063">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>714-814-7063</span>
+        </a>
+        <a class="contact-item" href="mailto:Mat.Garcia@MVGConsulting.dev">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Mat.Garcia@MVGConsulting.dev</span>
+        </a>
+        <a class="contact-item" href="https://linkedin.com/in/mathewvgarcia" target="_blank" rel="noopener noreferrer">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span>linkedin.com/in/mathewvgarcia</span>
+        </a>
       </div>
-    </div>
+    </header>
 
     <!-- Summary -->
-    <div class="glass-card">
-      <h2 class="section-title">Professional Summary</h2>
+    <section class="glass-card" aria-labelledby="summary-heading">
+      <h2 class="section-title" id="summary-heading">Professional Summary</h2>
       <p class="summary">
         AI/ML Infrastructure Leader and Cloud FinOps Consultant with over ten years of experience spanning machine learning operations, cloud infrastructure, and cost optimization. Currently leading the technical development of MagisAI, including AI model training pipelines, multi-region AWS infrastructure, and custom product development. Expert in AWS technologies, LLM fine-tuning methodologies, cost optimization strategies, and full-stack development. Proven ability to architect scalable ML systems, achieve measurable cost savings, and align technical operations with organizational mission.
       </p>
-    </div>
+    </section>
 
     <!-- Skills -->
-    <div class="glass-card">
-      <h2 class="section-title">Key Skills</h2>
+    <section class="glass-card" aria-labelledby="skills-heading">
+      <h2 class="section-title" id="skills-heading">Key Skills</h2>
       <div class="skills-grid">
         <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
                 <path d="M12 4.5c-4.5 0-7.5 3-7.5 6 0 2.5 1.5 4.5 4 5.5v2.5a1 1 0 001 1h5a1 1 0 001-1V16c2.5-1 4-3 4-5.5 0-3-3-6-7.5-6z"/>
                 <path d="M9.5 19.5v1a2.5 2.5 0 005 0v-1"/>
                 <circle cx="9" cy="10" r="1.5"/><circle cx="15" cy="10" r="1.5"/>
@@ -1942,7 +1936,7 @@
         <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
                 <path d="M6.5 19a4.5 4.5 0 110-9 .5.5 0 000-1 5 5 0 014-4.9 6 6 0 0111 4.4.5.5 0 00.5.5 4 4 0 01.5 7.97"/>
                 <path d="M12 13v8m0 0l-3-3m3 3l3-3"/>
               </svg>
@@ -1957,7 +1951,7 @@
         <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
                 <path d="M3 3v18h18"/>
                 <path d="M7 14l4-4 4 4 5-6"/>
                 <circle cx="20" cy="8" r="2"/>
@@ -1973,7 +1967,7 @@
         <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
                 <path d="M16 18l6-6-6-6"/>
                 <path d="M8 6l-6 6 6 6"/>
                 <path d="M14.5 4l-5 16"/>
@@ -1989,7 +1983,7 @@
         <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
                 <path d="M12 3l9 4.5v5c0 5-3.5 9.5-9 11-5.5-1.5-9-6-9-11v-5L12 3z"/>
                 <path d="M9 12l2 2 4-4"/>
               </svg>
@@ -2004,7 +1998,7 @@
         <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
-              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
                 <circle cx="12" cy="12" r="9"/>
                 <path d="M12 3v9l6 3"/>
                 <circle cx="12" cy="12" r="2"/>
@@ -2018,16 +2012,16 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Experience -->
-    <div class="glass-card">
-      <h2 class="section-title">Professional Experience</h2>
+    <section class="glass-card" aria-labelledby="experience-heading">
+      <h2 class="section-title" id="experience-heading">Professional Experience</h2>
 
       <div class="experience-item">
         <div class="job-header">
           <div>
-            <div class="job-title">Head of MagisAI Infrastructure and Cloud Operations</div>
+            <h3 class="job-title">Head of MagisAI Infrastructure and Cloud Operations</h3>
             <div class="company">Magis Center for Reason and Faith</div>
           </div>
           <span class="date-range">05/2024 – Present</span>
@@ -2047,7 +2041,7 @@
       <div class="experience-item">
         <div class="job-header">
           <div>
-            <div class="job-title">Cloud FinOps Consultant</div>
+            <h3 class="job-title">Cloud FinOps Consultant</h3>
             <div class="company">MVG Consulting</div>
           </div>
           <span class="date-range">05/2024 – Present</span>
@@ -2063,7 +2057,7 @@
       <div class="experience-item">
         <div class="job-header">
           <div>
-            <div class="job-title">Contract FinOps Analyst</div>
+            <h3 class="job-title">Contract FinOps Analyst</h3>
             <div class="company">CVS Health</div>
           </div>
           <span class="date-range">09/2023 – 11/2023</span>
@@ -2079,7 +2073,7 @@
       <div class="experience-item">
         <div class="job-header">
           <div>
-            <div class="job-title">Cloud FinOps Analyst</div>
+            <h3 class="job-title">Cloud FinOps Analyst</h3>
             <div class="company">Ingram Micro</div>
           </div>
           <span class="date-range">09/2022 – 07/2023</span>
@@ -2094,7 +2088,7 @@
       <div class="experience-item">
         <div class="job-header">
           <div>
-            <div class="job-title">Business Analyst</div>
+            <h3 class="job-title">Business Analyst</h3>
             <div class="company">Tokio Marine America</div>
           </div>
           <span class="date-range">02/2022 – 08/2022</span>
@@ -2107,7 +2101,7 @@
       <div class="experience-item">
         <div class="job-header">
           <div>
-            <div class="job-title">Cloud FinOps Analyst</div>
+            <h3 class="job-title">Cloud FinOps Analyst</h3>
             <div class="company">Ingram Micro</div>
           </div>
           <span class="date-range">07/2013 – 04/2018</span>
@@ -2121,11 +2115,11 @@
           <li>Engaged with vendor stakeholders for long-term planning and roadmap development, focusing on revenue growth and ROI optimization.</li>
         </ul>
       </div>
-    </div>
+    </section>
 
     <!-- Certifications -->
-    <div class="glass-card">
-      <h2 class="section-title">Certifications</h2>
+    <section class="glass-card" aria-labelledby="certifications-heading">
+      <h2 class="section-title" id="certifications-heading">Certifications</h2>
       <div class="certifications-grid">
         <!-- AWS Cloud Practitioner -->
         <div class="cert-cube-container">
@@ -2141,7 +2135,7 @@
               <span class="cert-badge-text">Certified</span>
             </div>
             <div class="cert-face left">
-              <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
                 <circle cx="12" cy="8" r="5"/>
                 <path d="M12 13v6"/>
                 <path d="M9 22l3-3 3 3"/>
@@ -2172,7 +2166,7 @@
               <span class="cert-badge-text">Certified</span>
             </div>
             <div class="cert-face left">
-              <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
                 <circle cx="12" cy="8" r="5"/>
                 <path d="M12 13v6"/>
                 <path d="M9 22l3-3 3 3"/>
@@ -2189,11 +2183,11 @@
           <p class="cert-title">FinOps Certified Practitioner</p>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Military -->
-    <div class="glass-card">
-      <h2 class="section-title">Military Service</h2>
+    <section class="glass-card" aria-labelledby="military-heading">
+      <h2 class="section-title" id="military-heading">Military Service</h2>
       <div class="military-item">
         <div class="military-badge">USMC</div>
         <div class="military-info">
@@ -2201,25 +2195,31 @@
           <div class="military-branch">United States Marine Corps • 2010 – 2014</div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <p class="footer">References available upon request</p>
-  </div>
+    <footer class="footer">References available upon request</footer>
+  </main>
 
   <script>
-    // Theme Toggle
+    // Theme Toggle (the initial theme is applied by the inline script in <head>)
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
+    const store = {
+      get: (key) => { try { return localStorage.getItem(key); } catch (e) { return null; } },
+      set: (key, value) => { try { localStorage.setItem(key, value); } catch (e) {} }
+    };
 
-    // Get saved theme or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
+    function labelThemeToggle(theme) {
+      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+    labelThemeToggle(html.getAttribute('data-theme') || 'dark');
 
     themeToggle.addEventListener('click', () => {
       const currentTheme = html.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
+      store.set('theme', newTheme);
+      labelThemeToggle(newTheme);
       colors = getThemeColors();
     });
 
@@ -2230,6 +2230,11 @@
       // Trigger the browser's print dialog, which allows saving as PDF
       window.print();
     });
+
+    // Chrome and Edge name the saved PDF after the document title
+    const pageTitle = document.title;
+    window.addEventListener('beforeprint', () => { document.title = 'Mathew_Garcia_Resume'; });
+    window.addEventListener('afterprint', () => { document.title = pageTitle; });
 
     // Skill cards: hover flips on pointer devices (CSS); click, tap, Enter and Space toggle
     document.querySelectorAll('.skill-card').forEach((card) => {
@@ -2265,9 +2270,13 @@
     }
 
     function resizeCanvas() {
+      // Phones fire resize when the URL bar shows or hides; only reshuffle the stars when the width changes
+      const widthChanged = canvas.width !== window.innerWidth;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      initParticles();
+      if (widthChanged || particles.length === 0) {
+        initParticles();
+      }
     }
 
     function initParticles() {
@@ -2408,11 +2417,6 @@
       if (!document.hidden) {
         drawParticles();
       }
-    });
-
-    // Cleanup on page unload
-    window.addEventListener('beforeunload', () => {
-      cancelAnimationFrame(animationId);
     });
   </script>
 </body>
