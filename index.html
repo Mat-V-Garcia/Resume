@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mathew Garcia - AI/ML Infrastructure Leader</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet">
   <style>
     :root {
       /* Animation & Transition */
@@ -425,21 +426,8 @@
     }
 
     [data-theme="light"] .header-card::after {
-      box-shadow: 0 0 28px rgba(37, 99, 235, 0.5),
-                  0 0 12px rgba(37, 99, 235, 0.65);
-    }
-
-    @keyframes headerGlowLight {
-      0%, 100% {
-        box-shadow: 0 0 28px rgba(37, 99, 235, 0.5), 0 0 12px rgba(37, 99, 235, 0.65);
-      }
-      50% {
-        box-shadow: 0 0 36px rgba(37, 99, 235, 0.6), 0 0 16px rgba(37, 99, 235, 0.75);
-      }
-    }
-
-    [data-theme="light"] .header-card::after {
-      animation: headerGlowLight 4s ease-in-out infinite;
+      box-shadow: 0 0 32px rgba(37, 99, 235, 0.55),
+                  0 0 14px rgba(37, 99, 235, 0.7);
     }
 
     .container {
@@ -538,17 +526,18 @@
       height: 3px;
       background: var(--accent-gradient-strong);
       border-radius: 0 0 var(--radius-full) var(--radius-full);
-      box-shadow: 0 0 28px rgba(91, 159, 237, 0.65),
-                  0 0 12px rgba(91, 159, 237, 0.8);
+      box-shadow: 0 0 32px rgba(91, 159, 237, 0.7),
+                  0 0 14px rgba(91, 159, 237, 0.85);
       animation: headerGlow 4s ease-in-out infinite;
     }
 
+    /* Glow pulses animate opacity only, so they run on the compositor instead of repainting */
     @keyframes headerGlow {
       0%, 100% {
-        box-shadow: 0 0 28px rgba(91, 159, 237, 0.65), 0 0 12px rgba(91, 159, 237, 0.8);
+        opacity: 1;
       }
       50% {
-        box-shadow: 0 0 36px rgba(91, 159, 237, 0.75), 0 0 16px rgba(91, 159, 237, 0.9);
+        opacity: 0.82;
       }
     }
 
@@ -601,6 +590,8 @@
       display: flex;
       align-items: center;
       gap: var(--space-2);
+      min-width: 0;
+      max-width: 100%;
       padding: var(--space-2) var(--space-3);
       background: rgba(255, 255, 255, 0.03);
       border-radius: var(--radius-full);
@@ -620,6 +611,7 @@
       text-decoration: none;
       transition: all var(--transition-base);
       font-weight: var(--weight-medium);
+      overflow-wrap: anywhere;
     }
 
     .contact-item a:hover {
@@ -696,7 +688,14 @@
       transform-style: preserve-3d;
     }
 
-    .skill-card:hover .skill-card-inner {
+    /* Hover flips only on devices that can hover; click, tap, Enter and Space toggle .is-flipped */
+    @media (hover: hover) {
+      .skill-card:hover .skill-card-inner {
+        transform: rotateY(180deg);
+      }
+    }
+
+    .skill-card.is-flipped .skill-card-inner {
       transform: rotateY(180deg);
     }
 
@@ -757,6 +756,7 @@
     .skill-card-front .skill-icon {
       width: 40px;
       height: 40px;
+      flex-shrink: 0;
       margin-bottom: var(--space-3);
       color: var(--accent-primary);
       filter: drop-shadow(0 0 8px rgba(91, 159, 237, 0.5));
@@ -780,6 +780,16 @@
       opacity: 0.7;
     }
 
+    .skill-hint::after {
+      content: 'Hover to reveal';
+    }
+
+    @media (hover: none) {
+      .skill-hint::after {
+        content: 'Tap to reveal';
+      }
+    }
+
     .skill-list {
       font-size: var(--font-sm);
       color: var(--text-primary);
@@ -787,17 +797,34 @@
       letter-spacing: 0.01em;
     }
 
+    /* Reduced motion: show both faces stacked in normal flow instead of a 3D flip */
     @media (prefers-reduced-motion: reduce) {
-      .skill-card-inner {
-        transition: none;
+      .skills-grid .skill-card {
+        height: auto;
       }
-      .skill-card:hover .skill-card-inner {
+      .skill-card-inner {
+        height: auto;
+        transition: none;
+        transform-style: flat;
+      }
+      .skill-card:hover .skill-card-inner,
+      .skill-card.is-flipped .skill-card-inner,
+      .skill-card:focus-visible .skill-card-inner {
         transform: none;
+      }
+      .skill-card-front,
+      .skill-card-back {
+        position: static;
+        height: auto;
+        transform: none;
+        backface-visibility: visible;
+        -webkit-backface-visibility: visible;
       }
       .skill-card-back {
-        transform: none;
-        position: relative;
         margin-top: var(--space-2);
+      }
+      .skill-hint {
+        display: none;
       }
     }
 
@@ -826,23 +853,19 @@
       height: 11px;
       background: var(--accent-gradient-strong);
       border-radius: 50%;
-      box-shadow: 0 0 14px rgba(91, 159, 237, 0.75),
-                  0 0 28px rgba(91, 159, 237, 0.45),
-                  0 0 6px rgba(91, 159, 237, 0.9);
+      box-shadow: 0 0 16px rgba(91, 159, 237, 0.8),
+                  0 0 32px rgba(91, 159, 237, 0.5),
+                  0 0 7px rgba(91, 159, 237, 0.95);
       border: 2px solid var(--bg-elevated);
       animation: timelinePulse 3s ease-in-out infinite;
     }
 
     @keyframes timelinePulse {
       0%, 100% {
-        box-shadow: 0 0 14px rgba(91, 159, 237, 0.75),
-                    0 0 28px rgba(91, 159, 237, 0.45),
-                    0 0 6px rgba(91, 159, 237, 0.9);
+        opacity: 1;
       }
       50% {
-        box-shadow: 0 0 18px rgba(91, 159, 237, 0.85),
-                    0 0 36px rgba(91, 159, 237, 0.55),
-                    0 0 8px rgba(91, 159, 237, 1);
+        opacity: 0.78;
       }
     }
 
@@ -1045,7 +1068,7 @@
     .cert-face .cert-badge-text {
       font-size: var(--font-lg);
       font-weight: var(--weight-bold);
-      color: var(--accent-primary);
+      color: var(--accent-hover);
       text-shadow: 0 0 20px rgba(91, 159, 237, 0.5);
     }
 
@@ -1073,31 +1096,35 @@
     }
 
     /* Light theme adjustments for cert cubes */
+    /* Light theme: a deep blue face so white text reads at 5:1 or better */
     [data-theme="light"] .cert-face {
       background: linear-gradient(
         145deg,
-        #5b9fed 0%,
-        #4a8fdf 25%,
-        #3d7fcf 50%,
-        #4a8fdf 75%,
-        #5b9fed 100%
+        #2563eb 0%,
+        #1e56d8 25%,
+        #1d4ed8 50%,
+        #1e56d8 75%,
+        #2563eb 100%
       );
-      border-color: rgba(37, 99, 235, 0.6);
+      border-color: rgba(29, 78, 216, 0.7);
       box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                  inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+                  inset 0 1px 0 rgba(255, 255, 255, 0.25),
+                  inset 0 -1px 0 rgba(0, 0, 0, 0.15);
     }
 
     [data-theme="light"] .cert-face .cert-label {
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.92);
     }
 
     [data-theme="light"] .cert-face .cert-badge-text {
-      text-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+      color: #ffffff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25),
+                   0 0 20px rgba(255, 255, 255, 0.25);
     }
 
     [data-theme="light"] .cert-face .cert-icon {
-      filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.3));
+      color: #ffffff;
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));
     }
 
 
@@ -1153,15 +1180,6 @@
                   inset 0 0 20px rgba(167, 139, 250, 0.08),
                   inset 0 2px 4px rgba(167, 139, 250, 0.15),
                   inset 0 -2px 4px rgba(0, 0, 0, 0.06);
-    }
-
-    [data-theme="light"] .cert-face .cert-badge-text {
-      text-shadow: 0 0 24px rgba(37, 99, 235, 0.35),
-                   0 2px 8px rgba(37, 99, 235, 0.2);
-    }
-
-    [data-theme="light"] .cert-face .cert-icon {
-      filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.3));
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1293,7 +1311,7 @@
       }
 
       .skill-card {
-        height: 140px;
+        height: 160px;
       }
 
       .certifications-grid {
@@ -1324,8 +1342,16 @@
     }
 
     @media (max-width: 640px) {
+      /* Smaller fixed toggle plus extra header padding so it never overlaps the name */
+      .theme-toggle {
+        width: 44px;
+        height: 44px;
+        top: 1rem;
+        right: 1rem;
+      }
+
       .header-card {
-        padding-top: var(--space-6);
+        padding-top: var(--space-8);
         padding-bottom: var(--space-6);
       }
 
@@ -1367,12 +1393,51 @@
       }
 
       .skill-card {
-        height: 130px;
+        height: 160px;
       }
 
       .skill-card-front .skill-icon {
         width: 32px;
         height: 32px;
+      }
+
+      .skill-category-title {
+        font-size: var(--font-xs);
+      }
+    }
+
+    /* Skip backdrop blur on phones and when the OS asks for less transparency:
+       re-blurring eight surfaces over an animated canvas every frame is the
+       page's single biggest GPU cost. Near-opaque backgrounds keep text readable. */
+    @media (max-width: 768px), (prefers-reduced-transparency: reduce) {
+      .glass-card,
+      .theme-toggle,
+      .download-button {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+
+      .glass-card {
+        background: linear-gradient(145deg, rgba(26, 31, 46, 0.92) 0%, rgba(26, 31, 46, 0.86) 100%);
+      }
+
+      .theme-toggle,
+      .download-button {
+        background: var(--bg-elevated);
+      }
+
+      .theme-toggle:hover,
+      .download-button:hover {
+        background: var(--bg-surface);
+      }
+
+      [data-theme="light"] .glass-card {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+      }
+
+      [data-theme="light"] .theme-toggle,
+      [data-theme="light"] .download-button {
+        background: #ffffff;
       }
     }
 
@@ -1744,7 +1809,9 @@
       }
 
       .cert-title {
-        display: none !important;
+        color: #374151 !important;
+        font-size: 9.5pt !important;
+        max-width: none !important;
       }
 
       /* Military section */
@@ -1855,7 +1922,7 @@
     <div class="glass-card">
       <h2 class="section-title">Key Skills</h2>
       <div class="skills-grid">
-        <div class="skill-card">
+        <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
               <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1865,14 +1932,14 @@
                 <path d="M9 13.5c0 1 1.5 2 3 2s3-1 3-2"/>
               </svg>
               <div class="skill-category-title">AI/ML Engineering</div>
-              <span class="skill-hint">Hover to reveal</span>
+              <span class="skill-hint" aria-hidden="true"></span>
             </div>
             <div class="skill-card-back">
               <div class="skill-list">LLM Fine-Tuning, SFT, RAFT, DPO, RAG, Vector Databases, HITL Workflows</div>
             </div>
           </div>
         </div>
-        <div class="skill-card">
+        <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
               <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1880,14 +1947,14 @@
                 <path d="M12 13v8m0 0l-3-3m3 3l3-3"/>
               </svg>
               <div class="skill-category-title">Cloud & Infrastructure</div>
-              <span class="skill-hint">Hover to reveal</span>
+              <span class="skill-hint" aria-hidden="true"></span>
             </div>
             <div class="skill-card-back">
               <div class="skill-list">AWS (EC2, S3, RDS, Lambda), Multi-Region Architecture, GPU Compute, DR</div>
             </div>
           </div>
         </div>
-        <div class="skill-card">
+        <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
               <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1896,14 +1963,14 @@
                 <circle cx="20" cy="8" r="2"/>
               </svg>
               <div class="skill-category-title">FinOps</div>
-              <span class="skill-hint">Hover to reveal</span>
+              <span class="skill-hint" aria-hidden="true"></span>
             </div>
             <div class="skill-card-back">
               <div class="skill-list">Cost Optimization, Reserved Instances, Savings Plans, Capacity Planning</div>
             </div>
           </div>
         </div>
-        <div class="skill-card">
+        <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
               <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1912,14 +1979,14 @@
                 <path d="M14.5 4l-5 16"/>
               </svg>
               <div class="skill-category-title">Full-Stack Development</div>
-              <span class="skill-hint">Hover to reveal</span>
+              <span class="skill-hint" aria-hidden="true"></span>
             </div>
             <div class="skill-card-back">
               <div class="skill-list">Python, JavaScript, Data Pipelines, Plotly Dashboards, Analytics</div>
             </div>
           </div>
         </div>
-        <div class="skill-card">
+        <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
               <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1927,14 +1994,14 @@
                 <path d="M9 12l2 2 4-4"/>
               </svg>
               <div class="skill-category-title">Compliance & Security</div>
-              <span class="skill-hint">Hover to reveal</span>
+              <span class="skill-hint" aria-hidden="true"></span>
             </div>
             <div class="skill-card-back">
               <div class="skill-list">FERPA, RBAC, Data Privacy, Security Architecture</div>
             </div>
           </div>
         </div>
-        <div class="skill-card">
+        <div class="skill-card" tabindex="0" role="button" aria-expanded="false">
           <div class="skill-card-inner">
             <div class="skill-card-front">
               <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1943,7 +2010,7 @@
                 <circle cx="12" cy="12" r="2"/>
               </svg>
               <div class="skill-category-title">Leadership</div>
-              <span class="skill-hint">Hover to reveal</span>
+              <span class="skill-hint" aria-hidden="true"></span>
             </div>
             <div class="skill-card-back">
               <div class="skill-list">Technical Strategy, Cross-functional Collaboration, Vendor Management</div>
@@ -2062,7 +2129,7 @@
       <div class="certifications-grid">
         <!-- AWS Cloud Practitioner -->
         <div class="cert-cube-container">
-          <div class="cert-cube">
+          <div class="cert-cube" aria-hidden="true">
             <div class="cert-face front">
               <span class="cert-badge-text">Cloud</span>
               <span class="cert-label">Practitioner</span>
@@ -2088,11 +2155,12 @@
               <span class="cert-badge-text">AWS</span>
             </div>
           </div>
-                  </div>
+          <p class="cert-title">AWS Certified Cloud Practitioner</p>
+        </div>
 
         <!-- FinOps Certified -->
         <div class="cert-cube-container">
-          <div class="cert-cube">
+          <div class="cert-cube" aria-hidden="true">
             <div class="cert-face front">
               <span class="cert-badge-text">FinOps</span>
               <span class="cert-label">Practitioner</span>
@@ -2118,7 +2186,8 @@
               <span class="cert-badge-text">FCP</span>
             </div>
           </div>
-                  </div>
+          <p class="cert-title">FinOps Certified Practitioner</p>
+        </div>
       </div>
     </div>
 
@@ -2151,6 +2220,7 @@
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
+      colors = getThemeColors();
     });
 
     // Download/Print PDF Button
@@ -2159,6 +2229,21 @@
     downloadButton.addEventListener('click', () => {
       // Trigger the browser's print dialog, which allows saving as PDF
       window.print();
+    });
+
+    // Skill cards: hover flips on pointer devices (CSS); click, tap, Enter and Space toggle
+    document.querySelectorAll('.skill-card').forEach((card) => {
+      const flip = () => {
+        const flipped = card.classList.toggle('is-flipped');
+        card.setAttribute('aria-expanded', String(flipped));
+      };
+      card.addEventListener('click', flip);
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          flip();
+        }
+      });
     });
 
     // Enhanced Starfield Animation
@@ -2203,13 +2288,20 @@
       }
     }
 
+    // Theme colors are read once and refreshed on toggle, not on every frame
+    let colors = getThemeColors();
+
     function drawParticles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const time = Date.now() * 0.001;
-      const { starColor, lineColor } = getThemeColors();
+      const { starColor, lineColor } = colors;
+      const starFill = `rgb(${starColor})`;
+      const count = particles.length;
 
-      particles.forEach((p, i) => {
+      for (let i = 0; i < count; i++) {
+        const p = particles[i];
+
         // Update position if motion is allowed
         if (!prefersReducedMotion) {
           p.x += p.vx;
@@ -2226,24 +2318,22 @@
         const twinkle = prefersReducedMotion ? 1 : Math.sin(time * p.twinkleSpeed * 10 + p.twinkleOffset) * 0.25 + 0.75;
         const currentOpacity = p.opacity * twinkle;
 
-        // Draw particle with gradient for better appearance
-        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
-        gradient.addColorStop(0, `rgba(${starColor}, ${currentOpacity})`);
-        gradient.addColorStop(0.5, `rgba(${starColor}, ${currentOpacity * 0.6})`);
-        gradient.addColorStop(1, `rgba(${starColor}, 0)`);
-
+        // Draw the star as a solid disc: no per-star gradient allocation
+        ctx.globalAlpha = currentOpacity;
+        ctx.fillStyle = starFill;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = gradient;
         ctx.fill();
+        ctx.globalAlpha = 1;
 
         // Mouse interaction - draw connection lines
         if (mouse.x !== null && mouse.y !== null) {
           const dx = mouse.x - p.x;
           const dy = mouse.y - p.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const d2 = dx * dx + dy * dy;
 
-          if (dist < 150) {
+          if (d2 < 150 * 150) {
+            const dist = Math.sqrt(d2);
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouse.x, mouse.y);
@@ -2254,14 +2344,15 @@
           }
         }
 
-        // Connect nearby particles (optimized - only check forward)
-        for (let j = i + 1; j < particles.length; j++) {
+        // Connect nearby particles (forward-only pairs; square root only for pairs that are close)
+        for (let j = i + 1; j < count; j++) {
           const p2 = particles[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const d2 = dx * dx + dy * dy;
 
-          if (dist < 110) {
+          if (d2 < 110 * 110) {
+            const dist = Math.sqrt(d2);
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
@@ -2271,7 +2362,7 @@
             ctx.stroke();
           }
         }
-      });
+      }
 
       animationId = requestAnimationFrame(drawParticles);
     }
@@ -2309,6 +2400,15 @@
       drawParticles();
       cancelAnimationFrame(animationId);
     }
+
+    // Pause the animation while the tab is hidden and resume when it is visible again
+    document.addEventListener('visibilitychange', () => {
+      if (prefersReducedMotion) return;
+      cancelAnimationFrame(animationId);
+      if (!document.hidden) {
+        drawParticles();
+      }
+    });
 
     // Cleanup on page unload
     window.addEventListener('beforeunload', () => {
