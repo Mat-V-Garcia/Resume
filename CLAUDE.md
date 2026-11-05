@@ -7,7 +7,8 @@ Web-based interactive resume for Mathew Garcia with modern glassmorphism design.
 - `index.html` - Single-file HTML resume with embedded CSS and JavaScript
 - `fonts/inter-latin-var.woff2` - Self-hosted Inter variable font (Latin subset, weights 100–900), the only font the page loads
 - `fonts/LICENSE-Inter.txt` - SIL Open Font License for Inter (keep it next to the font)
-- `Mathew_Garcia_Resume_Updated.docx` - Reference Word document; its content predates the November 2026 update, so the site is the source of truth until it is regenerated
+- `Mathew_Garcia_Resume_Updated.docx` - Word version of the resume, generated from `index.html` by `tools/build_docx.py` (three Letter pages, Arial); regenerate it after any content change
+- `tools/build_docx.py` - Builds the Word file from the site. It uses the existing .docx as its own template, so styles, bullet numbering and fonts carry over unchanged
 
 ## Deployment
 
@@ -83,7 +84,16 @@ Edit the HTML directly in `index.html`. Key sections (line numbers are approxima
 - Certifications: ~line 2169
 - Military: ~line 2237
 
-When the headline or summary changes, update the `<meta name="description">`, the Open Graph description and the JSON-LD `jobTitle` in `<head>` to match. Wrap a standout number in `<span class="metric">` (keep the span short; it does not wrap).
+When the headline or summary changes, update the `<meta name="description">`, the Open Graph description and the JSON-LD `jobTitle` in `<head>` to match. Wrap a standout number in `<span class="metric">` (keep the span short; it does not wrap). Then run `python tools/build_docx.py` so the Word file matches.
+
+### Regenerate the Word File
+Run `python tools/build_docx.py` from the repo root (Python 3, standard library only). It parses the header, summary, skill cards, experience entries, certification titles, military line and footer store links out of `index.html` and rewrites `Mathew_Garcia_Resume_Updated.docx` in place, keeping the old file's styles and numbering. The site is the source of truth; the Word-only choices live in the script:
+- The header shows the city, not the street address or phone, because the file is public in this repo
+- Section order is Summary, Certifications, Key Skills, Experience, Shipped Apps, Military
+- Skill cards become "Category: items" bullets; the footer store links become the Shipped Apps list with hyperlinks
+- The layout tunables at the top of the script (margins, heading spacing, type size, `keep_lines`) are set so the November 2026 content fills exactly three pages; `keep_lines=1` keeps bullets whole across page breaks but pushes the Military section onto a fourth page with the current content
+
+`python tools/build_docx.py out=<path>` writes elsewhere without touching the repo copy, which is the way to try a layout change. Check the page count by opening the result in Word; there is no LibreOffice on this machine.
 
 ### Modify Print Styles
 Edit `@media print` block starting at ~line 1443. The settings are already tight: a 10pt base, compact card and bullet spacing, a three-column skills grid, cards that may break across pages while each job header stays with its bullets, and the Military section held with the certifications. With the November 2026 content the PDF runs four Letter pages; it was three before the content grew. Fewer bullets, not more CSS, is what would bring it back to three. Key considerations:
